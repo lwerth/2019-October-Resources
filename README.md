@@ -1,5 +1,8 @@
 October 2019 Software capentry resources
 
-Put your lesson materials and scripts, here.
+Day_1
+unix_intro
+challenges
 
-Put any files the students will need, here.
+Day_2
+gapminder_clean hidden file
