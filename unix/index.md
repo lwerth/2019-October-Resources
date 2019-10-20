@@ -24,10 +24,10 @@ Here are some terms that are often used interchangeably – not because it's imp
 ---
 
 * **[Unix crash course](/unix/unix-intro)**  
-	1. [Getting started](/unix/getting-started)
-	2. [Working with files and directories](/unix/working-with-files-and-dirs)
-	3. [Redirectors and wildcards](/unix/wild-redirectors)
-	4. [Six glorious commands](/unix/six-glorious-commands)
-	5. [Variables and For loops](/unix/for-loops)  
+	1. [Getting started](/unix/getting-started.md)
+	2. [Working with files and directories](/unix/working-with-files-and-dirs.md)
+	3. [Redirectors and wildcards](/unix/wild-redirectors.md)
+	4. [Six glorious commands](/unix/six-glorious-commands.md)
+	5. [Variables and For loops](/unix/for-loops.md)  
 
 ---
