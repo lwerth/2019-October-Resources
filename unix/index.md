@@ -1,7 +1,6 @@
 
-
-If you're new to the empowering world of Unix and would like to dive in, you should run through the 5 short pages that comprise the Unix crash course. 
-
+# The UNIX shell
+The Unix shell has been around longer than most of its users have been alive. It has survived so long because it’s a power tool that allows people to do complex things with just a few keystrokes. More importantly, it helps them combine existing programs in new ways and automate repetitive tasks so they aren’t typing the same things over and over again. Use of the shell is fundamental to using a wide range of other powerful tools and computing resources (including “high-performance computing” supercomputers). These lessons will start you on a path towards using these resources effectively.
 
 # Some terminology
 Here are some terms that are often used interchangeably – not because it's important to remember them or any differences (it's not for most of us), but just to have them laid out somewhere.
