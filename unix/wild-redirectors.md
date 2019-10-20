@@ -128,7 +128,7 @@ So there are 900 files here, and it looks like there are 3 different extensions:
 With 900 files and 3 file types (".txt", ".tsv", and ".fq"), we might expect there to be 300 of each type, but let's make sure. Using what we've seen above, how can we count how many files of each type there are in this directory?
 <br>
 
-<div class="wrap-collabsible">
+<class="wrap-collabsible">
   <input id="q2" class="toggle" type="checkbox">
   <label for="q2" class="lbl-toggle">Solution</label>
   <div class="collapsible-content">
@@ -278,6 +278,6 @@ They may seem a little abstract at first, but redirectors and wildcards are two 
 ---
 ---
 
-<h5><a href="/unix/working-with-files-and-dirs" style="float: left"><b>Previous:</b> 2. Working with files and directories</a>
+<h5><a href="/unix/working-with-files-and-dirs.md" style="float: left"><b>Previous:</b> 2. Working with files and directories</a>
 
-<a href="/unix/six-glorious-commands" style="float: right"><b>Next:</b> 4. Six glorious commands</a></h5>
+<a href="/unix/six-glorious-commands.md" style="float: right"><b>Next:</b> 4. Six glorious commands</a></h5>

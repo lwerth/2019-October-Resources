@@ -349,6 +349,6 @@ Even though loops can get much more complicated as needed, practicing these foun
 ---
 ---
 
-<h5><a href="/unix/six-glorious-commands" style="float: left"><b>Previous:</b> 4. Six glorious commands</a>
+<h5><a href="/unix/six-glorious-commands.md" style="float: left"><b>Previous:</b> 4. Six glorious commands</a>
 
-<a href="/unix/unix-intro" style="float: right"><b>Back to:</b> Unix intro home</a></h5>
+<a href="/unix/index.md" style="float: right"><b>Back to:</b> Unix intro home</a></h5>

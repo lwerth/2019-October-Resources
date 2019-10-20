@@ -244,6 +244,6 @@ So far we've only seen individual commands and printing information to the scree
 ---
 ---
 
-<h5><a href="/unix/getting-started" style="float: left"><b>Previous:</b> 1. Getting started</a>
+<h5><a href="/unix/getting-started.md" style="float: left"><b>Previous:</b> 1. Getting started</a>
 
-<a href="/unix/wild-redirectors" style="float: right"><b>Next:</b> 3. Redirectors and wildcards</a></h5>
+<a href="/unix/wild-redirectors.md" style="float: right"><b>Next:</b> 3. Redirectors and wildcards</a></h5>
