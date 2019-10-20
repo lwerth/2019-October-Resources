@@ -375,6 +375,6 @@ Next we're going to look at [variables and for loops!](/unix/for-loops)
 ---
 ---
 
-<h5><a href="/unix/wild-redirectors" style="float: left"><b>Previous:</b> 3. Redirectors and wildcards</a>
+<h5><a href="/unix/wild-redirectors.md" style="float: left"><b>Previous:</b> 3. Redirectors and wildcards</a>
 
-<a href="/unix/for-loops" style="float: right"><b>Next:</b> 5. Variables and For loops</a></h5>
+<a href="/unix/for-loops.md" style="float: right"><b>Next:</b> 5. Variables and For loops</a></h5>
