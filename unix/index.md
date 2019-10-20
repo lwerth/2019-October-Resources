@@ -2,7 +2,7 @@
 
 If you're new to the empowering world of Unix and would like to dive in, you should run through the 5 short pages that comprise the Unix crash course. 
 
-<hr style="height:10px; visibility:hidden;" />
+
 # Some terminology
 Here are some terms that are often used interchangeably – not because it's important to remember them or any differences (it's not for most of us), but just to have them laid out somewhere.
 
@@ -12,8 +12,6 @@ Here are some terms that are often used interchangeably – not because it's imp
 | **`command line`** | a text-based environment capable of taking input and providing output |  
 | **`Unix`** | a family of operating systems |  
 | **`bash`** | the most common programming language used at a Unix command-line |  
-
-<hr style="height:10px; visibility:hidden;" />
 
 ---
 
