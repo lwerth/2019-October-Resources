@@ -3,12 +3,12 @@
 ## Lesson Objectives
 In this lesson we will cover:
 - what is Git?
-- why this Git lesson barely scratches the surface of what Git can do
+- why does this Git lesson barely scratch the surface of what Git can do?
 - what is GitHub?
 - what is a repository?
 - local vs. remote repositories
 
-## Terminology Covered
+## Terminology to be Covered
 - **version control** -- Alternative terms include "revision control", "versioning". Version control refers to tracking and organizing changes to code, files, etc. over time. For researchers, good version control software can also help us to collaborate, publish, and share our work with others.
 - **Git** -- A powerful tool for version control.
 - **GitHub** -- An online, open-source-friendly platform for hosting work done with Git (and much more). GitHub is dependent on Git, but Git is not dependent on GitHub!
@@ -28,7 +28,9 @@ We've all had this happen before. Researchers do this file naming thing. All. Th
 
 [Comic by Jorge Cham](http://phdcomics.com/comics/archive.php?comicid=1531)
 
-We do it so we can track the changes we make, collaborate with other researchers, and revisit old versions of our files. But there's a better way! (Hint: we suggest using git!)
+We do it so we can track the changes we make, collaborate with other researchers, and revisit old versions of our files. But there's a better way!
+
+>Hint: we suggest using Git!
 
 So let's set down some functional requirements for version control needed by researchers.
 
@@ -44,12 +46,12 @@ So let's set down some functional requirements for version control needed by res
 - Keep track of who made which changes and when
 
 ### 2. Make it possible to organize changes
-- Group related changes, even if they happen at different points in time
+- Group related changes, even if they don't happen at exactly the same time
 - Associate changes with tags or messages that make sense to you and others
 
 ### 3. Make it possible to publish, collaborate, and share
 - Publish code and/or data alongside your papers
-- Collaborate with others in real time
+- Collaborate with others using your own computer, set up how you like it
 - Share your work with the *entire* world so others can use it, build on it, repeat it, etc.
 
 ### "Make it possible" means the tool must be *simple*
@@ -64,10 +66,9 @@ Below is what git gives you out of the box:
 
 <img src="/images/swiss_army_hammer.jpg" width="450">
 
-Obviously, this tool is too complicated. Each individual component is probably very useful, but it's so confusing as to be useless until you know how to use each and every one of those attachments.
-We ain't using this hammer here. Because it's confusing. And confusing is worthless for beginners needing to get something done.
+Obviously, *this tool is too complicated*. Each individual component is probably very useful, but it's so confusing as to be useless until you know how to use each and every one of those attachments. We are *not* going to use this hammer here. Because it's confusing. And confusing is worthless for beginners needing to get something done.
 
-Instead, this lesson will focus on a narrow subset of what Git can do to make it more approachable (the "Goat Path Git"). Our view is that, as researchers, you are probably pretty good at, well, *researching* how to fix a problem. If we can get you started using some basic aspects of the tool (git), you will be prepared to learn what you need to make the most of it later!
+Instead, this lesson will focus on a narrow subset of what Git can do to make it more approachable (the "Goat Path Git"). Our view is that, as researchers, you are probably pretty good at, well, *researching* how to fix a problem. If we can get you started using some basic aspects of Git, you will be prepared to learn what you need to make the most of it later!
 
 -------------------------------------------------------------------------------------------------------------
 ## The Goat Path
@@ -88,7 +89,9 @@ If you don't follow the goat path as a beginner, bad things happen sometimes. Th
 
 [Comic by XKCD](https://xkcd.com/1597/)
 
-***Please note:*** there has been no mention of coding above. That's on purpose; git can be used to perform version control on regular text (manuscripts, dissertations, theses, etc), data (though there are many, many other [probably better] ways to do this), as well as code! Versioning is great. And versioning is really the whole point here. Git just happens to be the tool we use (but there are many other options, go explore!).
+***Please note:***
+
+>There has been no mention of coding above. That's on purpose; git can be used to perform version control on regular text (manuscripts, dissertations, theses, etc), data (though there are many, many other [probably better] ways to do this), as well as code! Versioning is great. And versioning is really the whole point here. Git just happens to be the tool we use (but there are many other options, go explore!).
 
 -------------------------------------------------------------------------------------------------------------
 ## So...what is Git?
@@ -102,7 +105,7 @@ Let me be clear: Git is *not the same thing* as GitHub! Git is a tool you can us
 ### Why GitHub, and not some other service?
 Software Carpentries likes GitHub for a few reasons, but perhaps the best reason is that it is very popular! And when collaboration is one of the goals, popular is a good thing :sunglasses:
 
-Plus, if you're a student, you can have unlimited private repositories with GitHub for the duration of your studentship :nerd_face:
+Plus, as a student, you can have unlimited private repositories with GitHub for the duration of your studentship :nerd_face:
 
 -------------------------------------------------------------------------------------------------------------
 ## Repositories
@@ -129,7 +132,7 @@ You can use Git on either a local or a remote repository - it is not necessary t
 
 [So WTF is Git?](https://codeburst.io/so-wtf-is-git-fa7daa0e0271)
 
-[GUIs for Git](https://git-scm.com/downloads/guis))
+[GUIs for Git](https://git-scm.com/downloads/guis)
 
 
 -------------------------------------------------------------------------------------------------------------
@@ -208,7 +211,7 @@ rm -r .git
 
 Boom. Problem solved :wink:
 
-You can remove the `temp` directory now *if you like* (it was only ever meant to be temporary):
+You can remove the `temp` directory now if you like (it was only ever meant to be temporary):
 
 ```bash
 cd ..
@@ -317,7 +320,7 @@ In many cases, Git uses a tree analogy for terminology. You don't need to worry 
 ```text
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-    readme.txt
+  readme.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
@@ -349,7 +352,7 @@ Notice this part of the output:
 ```text
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
-	new file:   readme.txt
+  new file:   readme.txt
 ```
 
 Now that we have *added readme.txt to the staging area*, Git tells us we have `changes to be committed` that includes a `new file: readme.txt`.
@@ -375,12 +378,12 @@ On branch master
 
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
-	new file:   readme.txt
+  new file:   readme.txt
 
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
-	modified:   readme.txt
+  modified:   readme.txt
 ```
 
 Notice what happened here. We had already added `readme.txt` to the staging area, which Git reports as `Changes to be committed` and refers to the `new file: readme.txt`. This part is exactly the same as it was before.
@@ -406,7 +409,7 @@ index e69de29..270c611 100644
 +hello, world!
 ```
 
->`git diff` is short for "show me the *difference* between my working copy and the staging area." Git uses `+` and `-` to indicate lines that are added or subtracted, respectively.
+>`git diff` is short for "show me the *difference* between my working copy and the staging area." Git uses `+` and `-` to indicate lines that are added or subtracted, respectively. Modifications are usually represented as subtracting the old line and adding the new line, so you see the old line preceded by `-` and then the new line preceded by `+`.
 
 We like the line that we added to `readme.txt`, so let's add this change to the staging area:
 
@@ -427,7 +430,7 @@ On branch master
 
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
-	new file:   readme.txt
+  new file:   readme.txt
 ```
 
 >If we had wanted to keep the addition of the new file separate from the addition of the line of text in the file, we would have had to commit after we created the file, but before we added the line of text to the staging area.
@@ -486,7 +489,7 @@ Date:   Fri Oct 18 15:58:51 2019 -0700
 
 Hey, now we can see why we introduced ourselves to Git! It has our *user.name* and *user.email* in the `Author:` field! In fact, *Git will not allow you to make a commit without providing a user name and email.*
 
-The commit itself has an arbitrary character sequence (called a hash) as a label. This isn't very helpful to us right now. But, our commit message is there, floating in space, easy to find and to read. ***This is why it is so valuable to write good commit messages - they are messages to your future self!***
+The commit itself has an arbitrary character sequence (called a hash) as a label. This lets Git find the commit easily, but you don't need to worry about that right now. Instead, notice that your commit message is there, floating in space, easy to find and to read. ***This is why it is so valuable to write good commit messages - they are messages to your future self!***
 
 -------------------------------------------------------------------------------------------------------------
 ## Exercise: DIY Git!
@@ -601,10 +604,13 @@ In this lesson we will cover:
 - expanding the Git work cycle to incorporate a remote repo
 
 ## Terminology to be Covered
-- **term?** -- explanation.
+- **origin** -- The reference point to use when linking a local and a remote repository. Almost always the remote repository. When syncing the two repositories, one will always be considered as ahead or behind the origin.
 
 ## Commands to be Covered
-- `command?` -- explanation.
+- `git remote add origin [URL]` -- Associate your local repository with the remote repository found at the [URL]
+- `git push --set-upstream origin master` (`git push -u origin master` for short) -- If your local repository exists before your remote repository, use this to "push" the local repository into the remote repository for the first time (see `git push` below)
+- `git pull` -- "Pull" the state of the remote repository into your local repository
+- `git push` -- "Push" the state of your local repository into the remote repository
 
 -------------------------------------------------------------------------------------------------------------
 ## Why use remote repositories?
@@ -669,7 +675,7 @@ origin	https://github.com/YOUR_USER_NAME_HERE/2019_workshop.git (push)
 
 If not, try `git remote add origin [URL]` again, making sure you type it exactly (and without the `[]` brackets).
 
-You have just told Git that your local Git repository (`2019_workshop`) has a remote repository to work from. This remote repo is referred to as the `origin`. This is because the remote repo will serve as the master reference point that Git uses to sync your local and remote repositories.
+You have just told Git that your local Git repository (`2019_workshop`) has a remote repository to work from. This remote repo is referred to as the **origin**. This is because the remote repo will serve as the master reference point that Git uses to sync your local and remote repositories. From now on, Git will report the status of your local repo as being ahead/behind your remote repo.
 
 You ***local repository*** now knows about your remote one. But your ***remote repository*** does not yet know about your local one! To finalize the link between them, you must **push** your local repository up to your remote repository:
 
@@ -679,7 +685,7 @@ git push --set-upstream origin master
 
 This "pushes" your local repo up to GitHub, and tells Git that the remote repo is the "upstream" origin that it should use to keep track of your changes.
 
-Return to GitHub, and refresh the page for your remote repository. It should now contain the contents of your loal repository.
+Return to GitHub, and refresh the page for your remote repository. It should now contain the contents of your local repository.
 
 Congratulations! You've created a remote repository and linked it to an existing local repository!
 
