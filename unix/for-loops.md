@@ -1,6 +1,6 @@
 
 <hr>
-<center>This is part 5 of 5 of an <a href="/unix/unix-intro" target="_blank">Introduction to Unix</a>. </center>
+<center>This is part 5 of 5 of an <a href="/unix/index.md" target="_blank">Introduction to Unix</a>. </center>
 <hr>
 
 <br>
