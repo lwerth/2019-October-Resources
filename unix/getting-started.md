@@ -242,6 +242,6 @@ While maybe not all that exciting, these things really are the foundation needed
 ---
 ---
 
-<h5><a href="/unix/unix-intro" style="float: left"><b>Back to:</b> Unix intro home</a>
+<h5><a href="/unix/index.md" style="float: left"><b>Back to:</b> Unix intro home</a>
 
-<a href="/unix/working-with-files-and-dirs" style="float: right"><b>Next:</b> 2. Working with files and directories</a></h5>
+<a href="/unix/working-with-files-and-dirs.md" style="float: right"><b>Next:</b> 2. Working with files and directories</a></h5>
