@@ -1,6 +1,6 @@
 
 
-If you're new to the empowering world of Unix and would like to dive in, you should run through the 5 short pages that comprise the [Unix crash course](/unix/unix-intro). Other than that, feel free to check out the other pages under the Unix pull-down menu above and listed below 🙂
+If you're new to the empowering world of Unix and would like to dive in, you should run through the 5 short pages that comprise the Unix crash course. 
 
 <hr style="height:10px; visibility:hidden;" />
 # Some terminology
@@ -19,7 +19,7 @@ Here are some terms that are often used interchangeably – not because it's imp
 
 # Unix pages
 
-* [Getting a Unix environment](/unix/getting_unix_env)
+* [Getting a Unix environment](https://ua-carpentries-workshops.github.io/2019-10-26-Tucson/#setup)
 
 ---
 
