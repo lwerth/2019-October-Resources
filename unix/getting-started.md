@@ -202,6 +202,7 @@ Moving around the computer like this may feel a bit cumbersome at first, but aft
 
 ---
 <br>
+
 # Summary
 While maybe not all that exciting, these things really are the foundation needed to start utilizing the command line – which then gives us the capability to use lots of tools that only work at a command line, manipulate large files rapidly, access and work with remote computers, and more! Next we're going to look at some of the ways to [work with files and directories](/unix/working-with-files-and-dirs).
 
