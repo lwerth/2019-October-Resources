@@ -10,8 +10,6 @@
 > * Wildcards
 > * History
 
-
-
 ---
 <br>
 
@@ -122,25 +120,14 @@ ls | wc -l
 
 So there are 900 files here, and it looks like there are 3 different extensions: ".txt"; ".tsv", and ".fq" (a common extension for the "fastq" format, which holds sequences and their quality information).
 
-<challengeBlock>
 <center><b>QUICK PRACTICE!</b></center>
 
 With 900 files and 3 file types (".txt", ".tsv", and ".fq"), we might expect there to be 300 of each type, but let's make sure. Using what we've seen above, how can we count how many files of each type there are in this directory?
 <br>
 
-<class="wrap-collabsible">
-  <input id="q2" class="toggle" type="checkbox">
-  <label for="q2" class="lbl-toggle">Solution</label>
-  <div class="collapsible-content">
-    <div class="content-inner">
-		<pre>ls *.txt | wc -l<br>ls *.tsv | wc -l<br>ls *.fq | wc -l</pre>
+> ls *.txt | wc -l<br>ls *.tsv | wc -l<br>ls *.fq | wc -l
 
 Ah good, it's nice when things make sense 🙂
-
-    </div>
-  </div>
-</div>
-</challengeBlock>
 
 
 So far we've just been using the **`*`** wildcard with the **`ls`** command. But wildcards can be used with many of the common Unix commands we've seen so far.
@@ -161,24 +148,12 @@ ls fastq_files/
 ls | wc -l
 ```
 
-<challengeBlock>
 <center><b>QUICK QUESTION!</b></center>
 
 Why does this say 601 instead of 600?
 <br>
 
-<div class="wrap-collabsible">
-  <input id="q3" class="toggle" type="checkbox">
-  <label for="q3" class="lbl-toggle">Solution</label>
-  <div class="collapsible-content">
-    <div class="content-inner">
-
-It's also counting the new directory we created 🙂
-
-    </div>
-  </div>
-</div>
-</challengeBlock>
+> It's also counting the new directory we created 🙂
 
 
 > **Note:** When using wildcards, running **`ls`** first like done in the above example (**`ls *.fq`**) is good practice before actually running a command. It is a way of checking that we are specifying exactly what we think we are specifying.
@@ -202,20 +177,13 @@ To get out of **`less`**, press the **`q`** key.
 
 We can also use the up and down arrows at the command line to scroll through previous commands. This is useful for finding commands, but it's also useful for making sure we are acting on the files we want to act on when using wildcards. As mentioned above, we can check first with **`ls *.fq`**, press **`return`** to see we are acting on the files we want, and then press the up arrow to bring up the previous command, and change it to what we want without altering the "*.fq" part of the command – as we already know it's correct. Any time we can remove the chance of human error, we should 🙂
 
-
-<challengeBlock>
 <center><b>QUICK PRACTICE!</b></center>
 
 We've already moved all the ".fq" files into their own directory. Create separate directories for the ".txt" files and the ".tsv" files too, and then try to move those files into their appropriate directories.
 <br>
 
-<div class="wrap-collabsible">
-  <input id="q4" class="toggle" type="checkbox">
-  <label for="q4" class="lbl-toggle">Solution</label>
-  <div class="collapsible-content">
-    <div class="content-inner">
-
-<pre>mkdir text_files
+```
+mkdir text_files
 ls *.txt
 mv *.txt text_files
 
@@ -223,14 +191,11 @@ mkdir tsv_files
 ls *.tsv
 mv *.tsv tsv_files
 
-ls</pre>
+ls
+```
 
 It doesn't matter what the directories are named, but at the end they should be the only 3 things in the working directory 🙂
 
-    </div>
-  </div>
-</div>
-</challengeBlock>
 
 
 <h3>The question mark (<b>?</b>)</h3>
@@ -267,7 +232,7 @@ They may seem a little abstract at first, but redirectors and wildcards are two 
 
 |Character     |Function          |
 |:----------:|------------------|
-|**`|`**      |a "pipe" allows stringing together multiple commands|
+|**`Pipe`**     |a "pipe" allows stringing together multiple commands|
 |**`>`**      |sends output to a file (**overwrites** target file)|
 |**`>>`**      |sends output to a file (appends to target file)|
 |**`*`**      |represents any character appearing any number of times|
