@@ -121,6 +121,7 @@ ls
 ```
 
 <br>
+
 ## Absolute vs relative path
 There are two ways to specify the path (address) of the file we want to do something to:
 
@@ -169,6 +170,7 @@ head experiment/notes.txt
 If we had been using **tab-completion**, we would not have made that mistake!
 
 <br>
+
 ### BONUS ROUND: Tab-completion is our friend!
 Tab-completion is a huge time-saver, but even more importantly it is a perpetual sanity-check that helps prevent mistakes.
 
@@ -204,7 +206,7 @@ Moving around the computer like this may feel a bit cumbersome at first, but aft
 <br>
 
 # Summary
-While maybe not all that exciting, these things really are the foundation needed to start utilizing the command line – which then gives us the capability to use lots of tools that only work at a command line, manipulate large files rapidly, access and work with remote computers, and more! Next we're going to look at some of the ways to [work with files and directories](/unix/working-with-files-and-dirs).
+While maybe not all that exciting, these things really are the foundation needed to start utilizing the command line – which then gives us the capability to use lots of tools that only work at a command line, manipulate large files rapidly, access and work with remote computers, and more! Next we're going to look at some of the ways to [work with files and directories](/unix/working-with-files-and-dirs.md).
 
 <h4><i>Terms introduced:</i></h4>
 
