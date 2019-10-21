@@ -115,40 +115,46 @@ In this lesson, we will:
 - introduce ourselves to Git
 - learn how to organize and track our changes with Git
 
-## Terminology Covered
-- **to commit (v.)** -- to save the state of all of your files in the repository.
-  - _I committed the changes to the repository._
-- **commit (n.)** -- an individual instance of a committing event. A snapshot of the repository in time.
-  - _The last commit introduced a bug in the program._
-- **changeset** -- a set of changes which should be treated as an indivisible group.
-- **to stage (v.)** -- to bundle files together *in preparation* of a commit (i.e., saving the state to the repo).
-- **staging area (n.)** -- the digital "space" where staging takes place. Changes must first be added to the staging area before you can commit them.
-
-## Commands Covered
-- `git init` -- Start a Git repository
-- `git config --global <configuration option> "configuration value"` -- Change your global Git configuration file to add or set a configuration option value. Git uses this file to determine who you are, communicate with GitHub (or other Git resources), and remember your settings for using Git.
-- `git status` -- Check the status of this repository (has anything changed?)
-- `git diff` -- See the differences noted by `git status`
-- `git add` -- Stage files whose changes you want to track
-- `git commit --message "YOUR COMMIT MESSAGE"` -- Commit the changes to the Git repository with a descriptive message
-- `git log` -- See a log of committed changes to the repository
-
 -------------------------------------------------------------------------------------------------------------
 ## Initializing a local Git Repository
 Congratulations, you are about to start actually using Git!
 
-A local Git repository is just a directory that you tell Git to keep track of.
-So let's make a fresh directory to get started:
+To begin the lesson, navigate into the `git` directory found inside `Day_1` of the `workshop` directory.
 
-```bash
-cd ~/Desktop/2019_workshop/
-mkdir temp
-```
+<details>
+  <summary>Solution</summary>
+  <p>
 
-And let's convert that directory into a Git repository with `git init`:
+  ```bash
+  cd ~/Desktop/workshop/Day_1/git
+  ```
+
+  </p>
+</details>
+
+Now...a local Git repository is just a directory on your computer that you tell Git to keep track of.
+So let's make a fresh directory called `temp` to get started.
+
+<details>
+  <summary>Solution</summary>
+  <p>
+
+  ```bash
+  mkdir temp
+  ```
+
+  </p>
+</details>
+
+Now we can convert this directory into a Git repository using the `git init` command. First, we navigate into the directory:
 
 ```bash
 cd temp
+```
+
+And then we initialize the repository with `git init`:
+
+```bash
 git init
 ```
 
@@ -158,9 +164,16 @@ And voilà! We have a Git repository!
 Remember, Git repositories are just directories that contain a special `.git` directory inside them.
 To see that this is the case, let's list **ALL** the contents of the `temp` directory.
 
-```bash
-ls -a
-```
+<details>
+  <summary>Solution</summary>
+  <p>
+
+  ```bash
+  ls -a
+  ```
+
+  </p>
+</details>
 
 You should see this:
 
@@ -168,42 +181,96 @@ You should see this:
 . ..  .git
 ```
 
-Good. You have just created a local repository!
+Good. You have just created a local Git repository!
 
 ### What if I initialize a Git repository by mistake?
 Imagine we just initialized a Git repository, and then realized that we weren't in the right directory. Yikes! What can we do?
 
-Remember: a local Git repository is just a directory with a `.git` subdirectory. So all we need to do is remove that directory!
+Remember: a local Git repository is just a directory with a `.git` subdirectory. So all we need to do is remove that `.git` directory!
 
-```bash
-rm -r .git
-```
+<details>
+  <summary>Solution</summary>
+  <p>
+
+  ```bash
+  rm -r .git
+  ```
+
+  </p>
+
+  Since the `.git` directory is a special hidden directory, bash may ask you some questions to confirm that you really want to get rid of it. Answer `yes` to the questions if you are sure you want to remove the `.git` directory.
+
+  If you want bash to perform the removal without asking you these questions, you can do:
+  <p>
+
+  ```bash
+  rm -rf .git
+  ```
+
+  </p>
+
+  The `f` there is an instance of the `--force` argument (`-f` for short). This forces through dangerous operations like `rm`. ***Use at your own risk!***
+
+</details>
 
 Boom. Problem solved :wink:
 
-You can remove the `temp` directory now if you like (it was only ever meant to be temporary):
+Now, remove the `temp` directory (it was only ever meant to be temporary).
 
-```bash
-cd ..
-rm -r temp
-```
+<details>
+  <summary>Solution</summary>
+  <p>
+
+  ```bash
+  cd ..
+  rm -r temp
+  ```
+
+  </p>
+
+  Notice that you have to go up to the parent directory before you can remove `temp`.
+
+</details>
 
 ### Do I have to start from a new directory?
 Suppose you have a project you've been working on and you want to start tracking it with Git.
 
-Of course you *could* make a new directory, initialize it as a Git repository with `git init`, and then move all your files from their current location into the newly minted Git repository. But who wants to do all that?
+Of course you *could* make a new directory, initialize it as a Git repository with `git init`, and then move all your files from their current location into the newly minted Git repository.
+
+But who wants to do all that?
 
 In actuality, you can convert any directory into a Git repository. All you need to do is:
 1. Move into the directory
 2. `git init`
 
-This works on directories that already exist. Let's practice that!
+This works on directories that already have content. Let's practice that!
 
-First, make sure you're at the top of the `2019_workshop` directory:
+First, make sure you're at the top of the `workshop` directory:
 
-```bash
-cd ~/Desktop/2019_workshop
-```
+<details>
+  <summary>Solution</summary>
+  <p>
+
+  ```bash
+  cd ~/Desktop/workshop
+  ```
+
+  </p>
+
+  OR:
+
+  <p>
+
+  ```bash
+  cd ../..
+  ```
+
+  </p>
+
+  (Goes up one level from `git` to `Day_1`, then goes up one level from `Day_1` to `workshop`.)
+
+</details>
+
 
 Convert this to a Git repository so we can track our work!
 
@@ -211,7 +278,9 @@ Convert this to a Git repository so we can track our work!
 git init
 ```
 
-Nice! :thumbsup: We will continue to use this directory as a Git repository so that you can track the work we do in the workshop (from here on, at least) with Git!
+Nice! :thumbsup:
+
+We will continue to use this directory as a Git repository so that you can track the work we do in the workshop (from here on, at least) with Git!
 
 -------------------------------------------------------------------------------------------------------------
 ## Introduce yourself to Git!
@@ -229,86 +298,179 @@ By telling Git your name, you allow Git to tag your activity as being authored b
 This introduction was a one-time thing. Now you are ready to use Git!
 
 -------------------------------------------------------------------------------------------------------------
-## Before we begin...
-Before we properly begin learning to work with Git, do the following:
+## First things first...
+I want you **trust me**, and blindly do the following:
 
 ```bash
 git add --all
-git commit --message "initialize SWC directory as a repository"
+git commit --message "initialize the workshop directory as a repository"
 ```
 
-I just had you use Git to record the act of initializing the `2019_workshop` directory as a repo. You created a **commit** (i.e., a snapshot, or checkpoint, in time) that contained `--all` the content of the directory, and which you labeled with the message `initialize SWC directory as a repository`.
+I just had you use Git to record the act of initializing the `workshop` directory as a repo. You created a **commit** (i.e., a snapshot, or checkpoint, in time) that contained `--all` the content of the directory, and which you labeled with the message `initialize the workshop directory as a repository`.
 
-We will return to what I had you do in more detail later. For now, let's learn about working with Git!
+This two-step process is the essence of how Git works. Rather than a single `save` operation, Git works by having you:
+1. tell it which parts of the work that you have done you want to commit to the repository
+2. save a snapshot of the entire repository that includes that work, with a message describing what you did
 
--------------------------------------------------------------------------------------------------------------
-## A (local) Git-based Work Cycle
-Ok, so we have a Git repository. Now...how do we use it?
-
-We'll go through this step-by-step shortly, but let's preview a good work cycle to use with Git:
-1. Do some work. It's a good idea to work on small, easily describable chunks.
-2. `git status`: ask Git to give you a status report to assess the changes you made.
-3. `git diff`: ask Git for a more detailed report of the changes you made.
-4. `git add <file>`: add those changes that you want to keep into the *staging area*.
-5. `git status` (again): it's a really good idea to verify that Git thinks you added the same changes that you think you added.
-6. `git commit --message "YOUR MESSAGE"` (`git commit -m "YOUR MESSAGE"` for short): commit the changes to the repository. This will create a commit that contains your message, which will be logged in the history of your repository forever :grin:
-7. Rinse and repeat as desired.
-
-We will expand on this recommended work cycle a little bit in the next lesson. But for now, let's put this work cycle into practice!
-
--------------------------------------------------------------------------------------------------------------
-## Working with Git
-Making sure we are in our repository...
-
-```bash
-cd ~/Desktop/2019_workshop
-```
-
-...let's start by adding a file to our repo:
-
-```bash
-touch readme.txt
-ls
-```
-
-Ok, that worked like normal. We have a new file in the directory. What does Git think happened?
-
-```bash
-git status
-```
-
-Let's break down what Git is telling us, bit-by-bit:
-
-```text
-On branch master
-```
-
-Ok...what is a "branch", and why is it called "master"?
-
-In many cases, Git uses a tree analogy for terminology. You don't need to worry about this for now. Just know that "branching" is a powerful feature of Git. But remember, Git has a lot of complicated tools and features (recall the "Swiss Army hammer"); in this lesson, we will be keeping things simple!
-
-```text
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-  readme.txt
-
-nothing added to commit but untracked files present (use "git add" to track)
-```
-
-Ok, now this is the meat of the `git status` report. Git's job is to track files, right? Here it's telling us that there are files in the repository that it is *not tracking*. It even tells us how to start tracking those files or include them in a commit.
-
-So why is our new file "untracked" even though Git's job is to track files, and Git sees that the file is there?
-
-This is where **staging** comes in. In order to allow you to organize the changes you make in sensible chunks, Git adds an intermediate step between making a change and committing it. This allows you to, e.g., make many changes to different files, and then *commit only some of those changes to the repository*. The **staging area** is the place where those changes "go" in preparation for a commit.
+This two-step process is represented here:
 
 <img src="/images/local_git.png" width="450">
 
 [Image adapted from post by Zvonimir Spajic at HackerNoon (Medium)](https://medium.com/hackernoon/understanding-git-index-4821a0765cf)
 
-Since we want to commit our new readme file to our repository, let's take Git's advice and *add readme.txt to the staging area*:
+The **working directory**, or **working copy**, is the copy of the repository that you have on your computer right now. It's called that because it's the copy of the repository that you are working on.
+
+The **staging directory**, or **staging area**, is a copy of the repository that Git uses to prepare for a commit. It's called that because it's the copy that Git uses to "stage", or prepare, a commit.
+
+The **repository** here is the official state of the Git repository. Git tracks your changes in part by comparing your *working copy* of the repository to the official copy, here labeled "repository".
+
+>Notice that this two-step process is more powerful than a traditional "save". When you save, you are necessarily saving every change that you have made. By adding changes to the staging area first, then committing them (i.e., saving them), you can change a lot of stuff but choose to save only some of those changes.
+
+-------------------------------------------------------------------------------------------------------------
+## A Very Basic Git-based Work Cycle
+Here is a basic cycle that you can follow to work with Git:
+1. Do some work to a file
+2. `git add <file>`: add the changes you made to that file to the staging area
+3. `git commit --message "COMMIT MESSAGE"`: commit those changes to the repository
+
+Let's give it a try! First, let's navigate into the `git` directory inside our repo.
 
 ```bash
-git add readme.txt
+cd ~/Desktop/workshop/Day_1/git
+```
+
+Right now, this folder should be empty:
+
+```bash
+ls
+```
+
+Let's create a new file called `practice.txt`:
+
+```bash
+touch practice.txt
+ls
+```
+
+Ok, that worked as expected. We have a new file in the directory.
+
+Suppose we want to **commit** this new file to the repository. What do we need to do first?
+
+<details>
+  <summary>Solution</summary>
+
+  Add the file that we created to the staging area:
+
+  <p>
+
+  ```bash
+  git add practice.txt
+  ```
+
+  </p>
+</details>
+
+And what do we need to do next?
+
+<details>
+  <summary>Solution</summary>
+
+  Commit the changes (adding a new file) to the repository with a message:
+
+  <p>
+
+  ```bash
+  git commit --message "YOUR COMMIT MESSAGE HERE"
+  ```
+
+  </p>
+</details>
+
+Great! you have now made **2 commits** to the workshop repository:
+1. You committed the files that were in the `workshop` directory to the repository
+2. You committed a new file to the `workshop/Day_1/git` subdirectory
+
+-------------------------------------------------------------------------------------------------------------
+## Improving Our Git-based Work Cycle with `git status` and `git diff`
+We've learned how to **commit changes to a Git repository**. But committing is a very decisive action (that's why they call it a **commit**).
+
+There are two commands that Git provides to help you monitor the work you've been doing, what changes are staged for a commit, and what changes are not staged for a commit. This can help you be more confident about the changes that you want to commit.
+
+The first command is `git status`. Try it now:
+
+```bash
+git status
+```
+
+Git should give you a message like this:
+
+```text
+On branch master
+nothing to commit, working tree clean
+```
+
+You don't need to worry about this message other than to know that Git is telling you that your working copy matches the official repo. In other words, you haven't made any changes inside the repo.
+
+Let's try changing something now. Add a line to `practice.txt`. To do so, let's practice using `>>` to append to an existing file!
+
+<details>
+  <summary>Solution</summary>
+  <p>
+
+  ```bash
+  echo "This line was added to 'practice.txt' using '>>' in bash" >> practice.txt
+  ```
+
+  </p>
+</details>
+
+Let's check back in with Git and see what it thinks happened:
+
+```bash
+git status
+```
+
+You should get an output like this:
+
+```text
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	   modified:   practice.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+As you can see, Git has noticed that you have `modified: practice.txt`. Neat!
+
+Git has also noted that there are `no changes added to commit`, and helpfully suggests using `git add`.
+
+`git status` can tell us that `practice.txt` was modified, but it does not tell us what those modification are. This is where `git diff` comes in:
+
+```bash
+git diff
+```
+
+>`git diff` is short for "show me the difference between my working copy and the staging area." Git uses `+` and `-` to indicate lines that are added or subtracted, respectively.
+
+You should get an output like the following:
+
+```text
+diff --git a/Day_1/git/practice.txt b/Day_1/git/practice.txt
+index e69de29..b5cfe91 100644
+--- a/Day_1/git/practice.txt
++++ b/Day_1/git/practice.txt
+@@ -0,0 +1 @@
++This line was added to 'practice.txt' using '>>' in bash
+```
+
+The last line there is the line that we added to `practice.txt`, with a `+` in front of it indicating that the line was added to the file.
+
+Those changes look good, and we want to commit them to our repository. Let's take Git's advice from the status report and *add practice.txt to the staging area*:
+
+```bash
+git add practice.txt
 ```
 
 Let's see how this changed our `git status` report for the repository.
@@ -317,101 +479,26 @@ Let's see how this changed our `git status` report for the repository.
 git status
 ```
 
-Notice this part of the output:
+You should get output like this:
 
 ```text
+On branch master
 Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
-  new file:   readme.txt
+  (use "git restore --staged <file>..." to unstage)
+      modified:   practice.txt
 ```
 
-Now that we have *added readme.txt to the staging area*, Git tells us we have `changes to be committed` that includes a `new file: readme.txt`.
+Now that we have *added practice.txt to the staging area*, Git tells us we have `Changes to be committed:` instead of `Changes not staged for commit:`. Yay!
 
 >Git is full of "helpful" advice (the advice gets more helpful as you get more used to Git's terminology). Here, Git tells us how to remove this change from the staging area if we don't want to commit it.
 
-Ok, that's nice. But this file is empty. Let's try adding something to the file. To write into the file, open it with nano:
+Hurray! Let's **commit** our changes to the repo:
 
 ```bash
-nano readme.txt
+git commit --message "YOUR COMMIT MESSAGE HERE"
 ```
 
-Write a line into the file (you can write whatever you want). When you are done, save it and exit nano.
-
-Let's check in with Git again. What does it think we did?
-
-```bash
-git status
-```
-
-```text
-On branch master
-
-Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
-  new file:   readme.txt
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-  modified:   readme.txt
-```
-
-Notice what happened here. We had already added `readme.txt` to the staging area, which Git reports as `Changes to be committed` and refers to the `new file: readme.txt`. This part is exactly the same as it was before.
-
-But Git also sees that we have made further changes that we have not added to the staging area. Git reports these as `Changes not staged for commit` and notes one such change (the only change we made): `modified: readme.txt`. So Git can tell the difference between new files, and modified files. Neat!
-
->So what do you think would happen if we committed our changes right now? What would `readme.txt` contain?
-
-Now imagine that you had changed a lot inside of `readme.txt`. Perhaps you can't even remember what changes you made. Git can give you a more detailed picture:
-
-```bash
-git diff
-```
-
-You should get an output like the following, where the last line is whatever you added to `readme.txt`:
-
-```text
-diff --git a/readme.txt b/readme.txt
-index e69de29..270c611 100644
---- a/readme.txt
-+++ b/readme.txt
-@@ -0,0 +1 @@
-+hello, world!
-```
-
->`git diff` is short for "show me the *difference* between my working copy and the staging area." Git uses `+` and `-` to indicate lines that are added or subtracted, respectively. Modifications are usually represented as subtracting the old line and adding the new line, so you see the old line preceded by `-` and then the new line preceded by `+`.
-
-We like the line that we added to `readme.txt`, so let's add this change to the staging area:
-
-```bash
-git add readme.txt
-```
-
-Let's double-check that we are on the same page with Git:
-
-```bash
-git status
-```
-
-Notice that now we are back to just:
-
-```text
-On branch master
-
-Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
-  new file:   readme.txt
-```
-
->If we had wanted to keep the addition of the new file separate from the addition of the line of text in the file, we would have had to commit after we created the file, but before we added the line of text to the staging area.
-
-We are pretty happy with this, so I think we are ready to commit our changes to the repo:
-
-```bash
-git commit --message "add readme"
-```
-
->The message we attach to this commit could be anything we want. But it's a good idea to make your commit messages *precise*, *concise*, and *informative*. This comes with practice!
+>Pro tip: git commit --message can be abbreviated to git commit -m.
 
 Let's see if the status of our repo is different now:
 
@@ -426,15 +513,23 @@ On branch master
 nothing to commit, working tree clean
 ```
 
-Again, another tree analogy. Basically, Git is saying "your working copy of the repository matches the official current state of the repository".
+Nice, we are back to that message telling us that our working copy matches the state of the repo.
 
-Congratulations, you've worked through your first Git-based work cycle!
+Let's update our Git-based work cycle:
+1. Do some work to a file
+2. `git status`: see what files have changed since the last commit
+3. `git diff`: see all the changes between your working copy and the staging area
+4. `git add <file>`: add changes you made to <file> to the staging area
+5. `git commit --message "COMMIT MESSAGE"`: commit your staged changes to the repository with a message
+6. Rinse and repeat
+
+Bravo! :clap: You've made another commit, and learned about `git status` and `git diff`!
 
 -------------------------------------------------------------------------------------------------------------
 ## Reviewing your commit history
-Before we end, let's do one final thing. Imagine you did this work, then you went on a long vacation. You just got back, and you want to pick up where you left off. Only problem is, you can't remember what you had been working on!
+Let's imagine that it's two weeks from now, and you are trying to remember what you learned in this workshop. You remember that you did some things with Git, which you recorded as "commits". But what were those commits? You can't seem to remember!
 
-Git can help you here. You can see a log of your recent commits to help you remember what you were doing:
+Git can help you here. As long as you are inside your Git repository, you can see a log of your recent commits to help you remember what you were doing:
 
 ```bash
 git log
@@ -443,79 +538,71 @@ git log
 Notice that your output contains something like the following:
 
 ```text
-commit d7d235517149fa309a792c132802b6e78a5469c8 (HEAD -> master)
+commit d6580d98545a223319c1a0ca1a58e5b468839ccc (HEAD -> master)
 Author: Noah Richard Nelson <noah.nelson.11@gmail.com>
-Date:   Fri Oct 18 16:00:57 2019 -0700
+Date:   Mon Oct 21 12:41:20 2019 -0700
 
-    add readme
+    added line to practice.txt and practiced the git status and git diff commands
+
+commit e63c250d2f84332b1759a3618395cf8e375ed9ff
+Author: Noah Richard Nelson <noah.nelson.11@gmail.com>
+Date:   Mon Oct 21 12:00:03 2019 -0700
+
+    practicing git commit
 
 commit be438683506f5d26d31e20e46d8c9caa6f4ecd2d
 Author: Noah Richard Nelson <noah.nelson.11@gmail.com>
-Date:   Fri Oct 18 15:58:51 2019 -0700
+Date:   Mon Oct 21 11:50:51 2019 -0700
 
-    initialize SWC directory as a repository
-
+    initialize the workshop directory as a repository
 ```
 
-Hey, now we can see why we introduced ourselves to Git! It has our *user.name* and *user.email* in the `Author:` field! In fact, *Git will not allow you to make a commit without providing a user name and email.*
+`git log` reports up to the last 10 commits in the repo, starting with the most recent commit and working backward. We only have 3 commits in the repo, so that's what it shows us.
+
+Now you can see why we introduced ourselves to Git! It has our *user.name* and *user.email* in the `Author:` field! In fact, *Git will not allow you to make a commit without providing a user name and email.*
 
 The commit itself has an arbitrary character sequence (called a hash) as a label. This lets Git find the commit easily, but you don't need to worry about that right now. Instead, notice that your commit message is there, floating in space, easy to find and to read. ***This is why it is so valuable to write good commit messages - they are messages to your future self!***
 
 -------------------------------------------------------------------------------------------------------------
 ## Exercise: DIY Git!
 Using the same repo we were just working on, I want you to:
-1. Add some more text into `readme.txt`
-2. Add a new file to the repo called `practice.txt`
-3. Make a separate commit for each of these two changes
-4. How does the commit log look different now?
+1. Add some more lines into `practice.txt`
+2. Add a new file called `readme.txt`
+3. Make a *single commit* with *both* of these two changes included in the commit
+4. Review the commit history to confirm your last commit
 
 <details>
   <summary>Solution</summary>
 
-  #### Add some more text into `readme.txt`
+  #### Add some more lines into `practice.txt`
   <p>
 
   ```bash
-  nano readme.txt
+  echo "I'm adding another line to 'practice.txt' now." >> practice.txt
   ```
 
   </p>
 
-  ...add text to the file, write out and exit nano (control+o, enter, control+x)
-
-  #### Add a new file the repo called `practice.txt`
+  #### Add a new file the repo called `readme.txt`
   <p>
 
   ```bash
-  touch practice.txt
+  touch readme.txt
   ```
 
   </p>
 
-  #### Make a separate commit for each of these two changes
+  #### Make a single commit for both of these two changes
   <p>
 
   ```bash
   git add readme.txt
-  git status
-  git commit --message "DIY exercise #1"
-  ```
-
-  </p>
-
-  ...making the commit message whatever you want. Then:
-
-  <p>
-
-  ```bash
   git add practice.txt
   git status
-  git commit --message "DIY exercise #2"
+  git commit --message "add line to file and add new file in same commit"
   ```
 
   </p>
-
-  ...making the commit message whatever you want.
 
   #### How does the commit log look different?
   <p>
@@ -533,34 +620,52 @@ Using the same repo we were just working on, I want you to:
   ```text
   commit 0da02f5d54be96244daa90483a21dbdda4d6258b (HEAD -> master)
   Author: Noah Richard Nelson <noah.nelson.11@gmail.com>
-  Date:   Fri Oct 18 16:00:57 2019 -0700
+  Date:   Mon Oct 21 13:01:08 2019 -0700
 
-      DIY exercise #2
+      add line to file and add new file in same commit
 
-  commit 8fbe2c4bd8d93b0dd2e2efad19a0fd1d6071d53f
+  commit d6580d98545a223319c1a0ca1a58e5b468839ccc
   Author: Noah Richard Nelson <noah.nelson.11@gmail.com>
-  Date:   Fri Oct 18 15:56:22 2019 -0700
+  Date:   Mon Oct 21 12:41:20 2019 -0700
 
-      DIY exercise #1
+      added line to practice.txt and practiced the git status and git diff commands
 
-  commit d7d235517149fa309a792c132802b6e78a5469c8
+  commit e63c250d2f84332b1759a3618395cf8e375ed9ff
   Author: Noah Richard Nelson <noah.nelson.11@gmail.com>
-  Date:   Fri Oct 18 16:00:57 2019 -0700
+  Date:   Mon Oct 21 12:00:03 2019 -0700
 
-      add readme
+      practicing git commit
 
   commit be438683506f5d26d31e20e46d8c9caa6f4ecd2d
   Author: Noah Richard Nelson <noah.nelson.11@gmail.com>
-  Date:   Fri Oct 18 15:58:51 2019 -0700
+  Date:   Mon Oct 21 11:50:51 2019 -0700
 
-      initialize SWC directory as a repository
-
+      initialize the workshop directory as a repository
   ```
 
   </p>
 </details>
 
 ## Congratulations, you now know how to use Git in a local repository!
+
+-------------------------------------------------------------------------------------------------------------
+## Terminology Covered
+- **working copy** -- the copy of a Git repository that you are working on. When you make changes to the repository, they happen her first, and have to be: (1) added to the staging area, and (2) committed, before they are saved to the repository.
+- **staging area** -- the digital "space" where changes to the repository are added in preparation for a commit.
+- **to commit (v.)** -- to save the state of all of your files in the repository.
+  - _I committed the changes to the repository._
+- **commit (n.)** -- an individual instance of a committing event. A snapshot of the repository in time.
+  - _The last commit introduced a bug in the program._
+
+## Commands Covered
+- `git init` -- Start a Git repository
+- `git config --global <configuration option> "configuration value"` -- Change your global Git configuration file to add or set a configuration option value. Git uses this file to determine who you are, communicate with GitHub (or other Git resources), and remember your settings for using Git.
+- `git status` -- Check the status of this repository (has anything changed?)
+- `git diff` -- See the differences noted by `git status`
+- `git add` -- Stage files whose changes you want to track
+- `git commit --message "YOUR COMMIT MESSAGE"` -- Commit the changes to the Git repository with a descriptive message
+- `git log` -- See a log of committed changes to the repository
+
 
 -------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------
@@ -572,15 +677,6 @@ In this lesson we will cover:
 - creating a remote repository
 - linking a remote repo to an existing local repo
 - expanding the Git work cycle to incorporate a remote repo
-
-## Terminology to be Covered
-- **origin** -- The reference point to use when linking a local and a remote repository. Almost always the remote repository. When syncing the two repositories, one will always be considered as ahead or behind the origin.
-
-## Commands to be Covered
-- `git remote add origin [URL]` -- Associate your local repository with the remote repository found at the [URL]
-- `git push --set-upstream origin master` (`git push -u origin master` for short) -- If your local repository exists before your remote repository, use this to "push" the local repository into the remote repository for the first time (see `git push` below)
-- `git pull` -- "Pull" the state of the remote repository into your local repository
-- `git push` -- "Push" the state of your local repository into the remote repository
 
 -------------------------------------------------------------------------------------------------------------
 ## Why use remote repositories?
@@ -597,35 +693,37 @@ There are 2 main reasons to use a remote repository:
 In addition, online platforms like GitHub provide some nice GUIs for interacting with your repo and viewing your commit history. These platforms also have a lot of helpful resources and tutorials for using Git both through their platform and from the command line.
 
 ## Creating a remote repository
-We are going to create a remote repository on GitHub now. This is essentially like doing a `git init` for the remote repository.
+We are going to create a remote repository on GitHub now.
 
-We are ultimately going to link this remote repo to the local repo that we were just using on our computers. As such, we are going to create this remote repo as follows:
+>This is kind of like doing a git init for the remote repository.
+
 1. Go to GitHub and sign in to your account (if you aren't already signed in)
 2. Look for the `+` drop-down menu at the top right of the screen
 3. Click on `New repository`
-4. Name the repository `2019_workshop`
-5. Add a description. This repo will serve as a record of some of what you did in this workshop after you leave, so you may want the description to explain this fact
-6. DO NOT CHECK `Initialize this repository with a README`
-7. Click the drop-down menu labeled `Add a license` and select `MIT License`
+4. Name the repository `workshop` (the name should match your local repository)
+5. Add a description. This repo will serve as a record of some of what you did in this workshop after you leave, so you may want the description to reflect that
+6. DO NOT CHECK `Initialize this repository with a README`. **This is important!!!**
+7. Click the drop-down menu labeled `Add a license` and select `MIT License` (it's the most inclusive open source license available)
 8. Click `Create repository`
 
->If we did not already a local repo, we may have wanted to check `Initialize this repository with a README`. This would create a file called `README.md` which would serve as the landing page for others who visit our repository.
+>If we did not already have a local repo, we could have checked `Initialize this repository with a README`. Since we do have a local repo, however, we don't want any files in this remote repo until we have synced it with our local repo.
 
 And voilà! We have just created a remote repository on GitHub!
 
+-------------------------------------------------------------------------------------------------------------
 ## Linking the remote repo to our local repo
-You should now be looking at a GitHub page titled `Quick setup — if you’ve done this kind of thing before`.
+You should now be looking at a GitHub page with `Quick setup — if you’ve done this kind of thing before` at the top of the page.
 
 >You haven't done this kind of thing before, but that's okay. I'm here to help you!
 
-Copy the link to this remote repo that GitHub provides right beneath the title, keeping `HTTPS` selected.
+Making sure that the button labeled `HTTPS` is depressed, copy the link to this remote repo that GitHub provides right beneath the title. There is an icon to the right of the link which will copy the link for you if you press it :smile:
 
-Return to your command line, and ***make sure you at the top of your local 2019_workshop repo***.
+Return to your command line, and ***make sure you are in your local repo***.
 
-Add a `remote origin` to your local repository by doing the following:
+Type the following git command, pasting the link that you copied:
 
 ```bash
-git remote add origin [put copied web address here]
+git remote add origin [paste copied web address here]
 ```
 
 >If you are having trouble copy-and-pasting the web address into the command line, you can type it manually. Just be *very careful* that you copy it *exactly!*
@@ -639,23 +737,25 @@ git remote -v
 You should get an output like this:
 
 ```text
-origin	https://github.com/YOUR_USER_NAME_HERE/2019_workshop.git (fetch)
-origin	https://github.com/YOUR_USER_NAME_HERE/2019_workshop.git (push)
+origin	https://github.com/YOUR_USER_NAME_HERE/workshop.git (fetch)
+origin	https://github.com/YOUR_USER_NAME_HERE/workshop.git (push)
 ```
 
 If not, try `git remote add origin [URL]` again, making sure you type it exactly (and without the `[]` brackets).
 
-You have just told Git that your local Git repository (`2019_workshop`) has a remote repository to work from. This remote repo is referred to as the **origin**. This is because the remote repo will serve as the master reference point that Git uses to sync your local and remote repositories. From now on, Git will report the status of your local repo as being ahead/behind your remote repo.
+You have just told Git that your local Git repository (`workshop`) has a remote repository to work from. This remote repo is referred to as the **origin**. This is because the remote repo will serve as the master reference point that Git uses to sync your local and remote repositories. From now on, Git will report the status of your local repo as being ahead/behind your remote repo.
 
-You ***local repository*** now knows about your remote one. But your ***remote repository*** does not yet know about your local one! To finalize the link between them, you must **push** your local repository up to your remote repository:
+Your ***local repository*** now knows about your remote one.
+
+Now it's time to **push** your local repository up to your remote repository. In general, the state of a local repo is "pushed" to the remote repo using the command `git push`. However, when you push an existing local repo to a new remote repo for the first time, you must use a special version of the command that tells Git to use the "master" branch of the "origin" (the remote repo):
 
 ```bash
 git push --set-upstream origin master
 ```
 
-This "pushes" your local repo up to GitHub, and tells Git that the remote repo is the "upstream" origin that it should use to keep track of your changes.
+This "pushes" your local repo up to GitHub, and tells Git that the remote repo is the "upstream" origin from which the repository flows :wink:
 
-Return to GitHub, and refresh the page for your remote repository. It should now contain the contents of your local repository.
+Return to GitHub, and refresh the page for your remote repository. It should now contain the contents of your local repository!
 
 Congratulations! You've created a remote repository and linked it to an existing local repository!
 
@@ -686,6 +786,7 @@ git add readme.txt
 git commit --message "YOUR COMMIT MESSAGE"
 ```
 
+-------------------------------------------------------------------------------------------------------------
 ## Keeping your local and remote repositories synced
 Great, we just made a nice change to our repository on GitHub! We're all good, right?
 
@@ -701,7 +802,7 @@ Right now, there is a commit in our remote repo that does not exist in our local
 Go back to the command line, and make sure you are in your local repository:
 
 ```bash
-cd ~/Desktop/2019_workshop
+cd ~/Desktop/workshop
 ```
 
 **Pull** from your remote repo:
@@ -719,10 +820,10 @@ Now you know that your local repo is up-to-date with your remote repo!
 ### Pushing commits from the local repo into your remote repo
 Now that our local repo is up-to-date, let's get to work!
 
-`practice.txt` is still empty from before. Let's add some content to that file in nano:
+`readme.txt` is still empty from before. Let's add some notes about what we have learned:
 
 ```bash
-nano practice.txt
+nano Day_1/git/practice.txt
 ```
 
 Now let's verify that we are on the same page as Git:
@@ -734,7 +835,7 @@ git status
 Git's reporting that we modified a file. Good! Now let's add those changes to the staging area:
 
 ```bash
-git add practice.txt
+git add readme.txt
 ```
 
 Let's double-check that it worked as expected:
@@ -761,6 +862,12 @@ git push
 
 That's it! Let's make sure GitHub is reflecting that last commit in our remote repository. Go back to GitHub, refresh the repo page, and take a look!
 
+This gives us an updated picture of what we are doing with Git:
+
+<img src="/images/git_flow.png">
+
+[Image from blog post by Vassilis Kehayas](https://neurathsboat.blog/post/git-intro/)
+
 -------------------------------------------------------------------------------------------------------------
 ## An Updated Git-based Work Cycle
 Now that we have set up a remote repository, let's revisit our Git-based work cycle.
@@ -769,15 +876,19 @@ Here's what I do every time I sit down to work on a project that I'm tracking wi
 1. `git pull` -- Pull changes from the remote repository. I do this even if I haven't changed anything just to be safe and make it a habit.
 2. `git log` -- Remind myself of my recent activity in the repository. What are my recent commits?
 3. Do some work.
-4. `git status` -- Remind myself of the work I just did.
-5. What changes that I made do I want to commit?
-6. `git diff <file>` -- Remind myself of the work I did on a particular file that I want to commit my changes for.
-7. `git add <file>` -- Once I'm sure I want to commit those changes, stage them for the commit. (Repeat steps 6-7 for each file I want to include in this one commit)
-8. `git commit --message "..."` -- Commit the set of changes together with a clear message. (Repeat steps 3-8 as needed)
+4. `git status` -- Remind myself of the work I just did, in broad strokes (files added, delted, or modified).
+6. `git diff` -- Remind myself of the work I just did, in terms of the specific changes made.
+7. `git add <file>` -- Once I'm sure I want to commit changes to a given file, I add the file to the staging area.
+8. `git commit --message "..."` -- Commit all the changes that I have added to the staging area with a clear message.
+ - Repeat steps 3-8 as necessary
 9. `git push` -- When I'm done, I push the changes to my remote repository.
 
-This gives us an updated picture of what we are doing with Git:
+-------------------------------------------------------------------------------------------------------------
+## Terminology Covered
+- **origin** -- The reference point to use when linking a local and a remote repository. Almost always the remote repository. When syncing the two repositories, one will always be considered as ahead or behind the origin.
 
-<img src="/images/git_flow.png">
-
-[Image from blog post by Vassilis Kehayas](https://neurathsboat.blog/post/git-intro/)
+## Commands Covered
+- `git remote add origin [URL]` -- Associate your local repository with the remote repository found at the [URL]
+- `git push --set-upstream origin master` (`git push -u origin master` for short) -- If your local repository exists before your remote repository, use this to "push" the local repository into the remote repository **for the first time** (see `git push` below)
+- `git pull` -- "Pull" the state of the remote repository into your local repository
+- `git push` -- "Push" the state of your local repository into the remote repository
