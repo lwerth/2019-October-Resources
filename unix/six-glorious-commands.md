@@ -6,7 +6,7 @@
 <br>
 
 > **Things covered here:**
-> * Here we're going to touch upon 6 glorious commands that are absolutely worth having in our toolkit! (Displayed in the table of contents.)
+> * Here we're going to touch upon 3 glorious commands that are absolutely worth having in our toolkit!
 
 
 
@@ -357,7 +357,7 @@ less gene_annotations_fixed.tsv
 # Summary
 As mentioned, this page is just a first introduction to some great commands that are worth having in our toolkit. Each of them has much more functionality that we can dig into further as needed 🙂
 
-Next we're going to look at [variables and for loops!](/unix/for-loops)
+Next we're going to look at [variables and for loops!](/unix/for-loops.md)
 
 <h4><i>Commands introduced:</i></h4>
 
