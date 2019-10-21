@@ -686,13 +686,17 @@ We are going to create a remote repository on GitHub now.
 >This is kind of like doing a git init for the remote repository.
 
 1. Go to GitHub and sign in to your account (if you aren't already signed in)
-2. Look for the `+` drop-down menu at the top right of the screen
+2. Click on the `+` drop-down menu at the top right of the screen
 3. Click on `New repository`
+
+<img source="images/GitHub_new_repo.png">
+
 4. Name the repository `workshop` (the name should match your local repository)
 5. Add a description. This repo will serve as a record of some of what you did in this workshop after you leave, so you may want the description to reflect that
-6. DO NOT CHECK `Initialize this repository with a README`. **This is important!!!**
-7. Click the drop-down menu labeled `Add a license` and select `MIT License` (it's the most inclusive open source license available)
-8. Click `Create repository`
+6. **DO NOT CHECK OR CHANGE ANYTHING ELSE**
+7. Click `Create repository`
+
+<img source="images/GitHub_new_repo_form.png">
 
 >If we did not already have a local repo, we could have checked `Initialize this repository with a README`. Since we do have a local repo, however, we don't want any files in this remote repo until we have synced it with our local repo.
 
@@ -704,44 +708,39 @@ You should now be looking at a GitHub page with `Quick setup — if you’ve don
 
 >You haven't done this kind of thing before, but that's okay. I'm here to help you!
 
-Making sure that the button labeled `HTTPS` is depressed, copy the link to this remote repo that GitHub provides right beneath the title. There is an icon to the right of the link which will copy the link for you if you press it :smile:
+Scroll down to where it says `...or push an existing repository from the command line`.
+
+On the far right of the screen, click the icon that looks like a clipboard with an arrow. This will copy the Git commands you see below the heading:
+
+<img source="images/GitHub_copy_commands.png">
 
 Return to your command line, and ***make sure you are in your local repo***.
 
-Type the following git command, pasting the link that you copied:
+Pasting the Git commands that you copied. It should look something the following, but with your repo's URL instead of mine:
 
 ```bash
-git remote add origin [paste copied web address here]
+git remote add origin https://github.com/NoahRichardNelson/workshop.git
+git push -u origin master
 ```
 
->If you are having trouble copy-and-pasting the web address into the command line, you can type it manually. Just be *very careful* that you copy it *exactly!*
+>If you are having trouble copy-and-pasting into the command line, you can type it manually. Just be *very careful* that you type it *exactly!*
 
 Verify that you added the web address correctly (especially important if you had to type it by hand!):
 
 ```bash
-git remote -v
+git remote --verbose
 ```
 
-You should get an output like this:
+You should get an output like this, with the URL matching the one from above:
 
 ```text
-origin	https://github.com/YOUR_USER_NAME_HERE/workshop.git (fetch)
-origin	https://github.com/YOUR_USER_NAME_HERE/workshop.git (push)
+origin	https://github.com/NoahRichardNelson/workshop.git (fetch)
+origin	https://github.com/NoahRichardNelson/workshop.git (push)
 ```
 
-If not, try `git remote add origin [URL]` again, making sure you type it exactly (and without the `[]` brackets).
-
-You have just told Git that your local Git repository (`workshop`) has a remote repository to work from. This remote repo is referred to as the **origin**. This is because the remote repo will serve as the master reference point that Git uses to sync your local and remote repositories. From now on, Git will report the status of your local repo as being ahead/behind your remote repo.
-
-Your ***local repository*** now knows about your remote one.
-
-Now it's time to **push** your local repository up to your remote repository. In general, the state of a local repo is "pushed" to the remote repo using the command `git push`. However, when you push an existing local repo to a new remote repo for the first time, you must use a special version of the command that tells Git to use the "master" branch of the "origin" (the remote repo):
-
-```bash
-git push --set-upstream origin master
-```
-
-This "pushes" your local repo up to GitHub, and tells Git that the remote repo is the "upstream" origin from which the repository flows :wink:
+You have just:
+1. associated your *local repository* with the remote repository on GitHub (called the remote "origin", and found at the URL you pasted)
+2. told Git to "push" the contents of your local repository up to your remote repository.
 
 Return to GitHub, and refresh the page for your remote repository. It should now contain the contents of your local repository!
 
@@ -751,15 +750,23 @@ Congratulations! You've created a remote repository and linked it to an existing
 ## Using Git on GitHub
 So far, we have learned how to use Git to track changes to a repository from the command line. GitHub also allows you to work directly on the remote repository.
 
-Let's try making a few changes to our remote repository. On GitHub, click on the file `readme.txt`.
+Let's try making a few changes to our remote repository. You may have noticed that GitHub was strongly suggesting that you should have a `README`, a `LICENSE`, and a `.gitignore` file.
 
-You should see something like the following. Click on the pencil icon to edit the file.
+Due to limited time, we won't add a `LICENSE` or a `.gitignore` file. But you can learn more about [repository licenses](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository#disclaimer) and [.gitignore](https://help.github.com/en/github/using-git/ignoring-files) on GitHub's help pages.
 
-<img src="/images/GitHub_edit_file.png">
+We will, however, add a `README`. To add a `README`, click on the green `Add a README` button located under the list of files and commits:
 
-Make some changes to the file.
+<img source="images/GitHub_add_readme.png">
 
-Notice that GitHub doesn't give you a way to perform a traditional `save` operation. Instead, GitHub has an interface for **committing** your changes to the remote Git repository at the bottom of the screen.
+Notice that the file already contains:
+1. the name of your repo
+2. the description you gave your repo (if you gave it one)
+
+>The `README` file is in a special format for presenting text files on the web using HTML. The format is called "markdown", and has the `.md` file extension.
+
+Feel free to edit the file if you like. When you are ready, scroll down to the bottom of the screen.
+
+Notice that GitHub doesn't give you a way to perform a traditional `save` operation. Instead, GitHub has an interface for **committing** your changes to the remote Git repository.
 
 The first box in the interface is were your **commit message** goes. This is the `...` part when you work from the command line and do `git commit --message "..."`.
 
@@ -767,12 +774,16 @@ Add a *precise, concise, and informative* commit message about the changes you j
 
 Making sure that `commit directly to the master branch` is still selected, click on `Commit changes`.
 
+<img source="images/GitHub_commit.png">
+
 GitHub just performed the following for you on the remote repository:
 
 ```bash
-git add readme.txt
+git add README.md
 git commit --message "YOUR COMMIT MESSAGE"
 ```
+
+When the page refreshes, you should see `README.md` as a file in your repository, with your commit message next to it! :thumbsup:
 
 -------------------------------------------------------------------------------------------------------------
 ## Keeping your local and remote repositories synced
@@ -801,12 +812,40 @@ git pull
 
 >You will likely be asked to input your GitHub password. Do so.
 
-Notice that Git now provides some information about what it pulled. Can you see how this is a reflection of the changes you made on GitHub? It's pretty cool :sunglasses:
+Notice that Git now provides some information about what it pulled.
+
+```text
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/NoahRichardNelson/workshop
+  bbcdd8f..1be38cd  master     -> origin/master
+Updating bbcdd8f..1be38cd
+Fast-forward
+  README.md | 2 ++
+  1 file changed, 2 insertions(+)
+  create mode 100644 README.md
+```
+
+Most of this is Git jargon that you don't need to worry about. But can you see how this is a reflection of the changes you made on GitHub?
+
+```text
+Fast-forward
+  README.md | 2 ++
+  1 file changed, 2 insertions(+)
+  create mode 100644 README.md
+```
+
+It notes that `README.md` was affected. The `| 2 ++` is telling you two lines were added. Then Git reports `1 file changed, 2 insertions(+)`. That's pretty cool :sunglasses:
 
 Now you know that your local repo is up-to-date with your remote repo!
 
 ### Pushing commits from the local repo into your remote repo
-Now that our local repo is up-to-date, let's get to work!
+The final piece of keeping your local and remote repositories synced is `git push`. We already did a "push" earlier, when we pushed the state of our local repo up to the remote repo for the first time.
+
+Let's practice using `git push` by changing something in the local repository and pushing it up to the remote repo.
 
 `readme.txt` is still empty from before. Let's add some notes about what we have learned:
 
@@ -840,7 +879,7 @@ git commit --message "COMMIT MESSAGE"
 
 Very nice, we did some very important work and committed the changes to our local repository. :wink:
 
-But wait a minute! Our remote repository needs to be made aware of those changes! We can handle that with `git push`:
+Now let's push those changes up to our remote repo on GitHub using `git push`:
 
 ```bash
 git push
@@ -880,3 +919,8 @@ Here's what I do every time I sit down to work on a project that I'm tracking wi
 - `git push --set-upstream origin master` (`git push -u origin master` for short) -- If your local repository exists before your remote repository, use this to "push" the local repository into the remote repository **for the first time** (see `git push` below)
 - `git pull` -- "Pull" the state of the remote repository into your local repository
 - `git push` -- "Push" the state of your local repository into the remote repository
+
+## Guides and Resources
+[Tell Git to ignore certain files with .gitignore](https://help.github.com/en/github/using-git/ignoring-files)
+
+[More about repository licenses](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository#disclaimer)
