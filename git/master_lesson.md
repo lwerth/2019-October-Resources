@@ -8,18 +8,11 @@ In this lesson we will cover:
 - what is a repository?
 - local vs. remote repositories
 
-## Terminology to be Covered
-- **version control** -- Alternative terms include "revision control", "versioning". Version control refers to tracking and organizing changes to code, files, etc. over time. For researchers, good version control software can also help us to collaborate, publish, and share our work with others.
-- **Git** -- A powerful tool for version control.
-- **GitHub** -- An online, open-source-friendly platform for hosting work done with Git (and much more). GitHub is dependent on Git, but Git is not dependent on GitHub!
-- **repository** -- what we call the thing that tracks changes to our files. You might think of it like a database, an invoice, or a receipt of every change you have ever saved.
-- **repo** -- short for repository.
-- **local repository** -- a repository that you have on your *local machine* (e.g., your laptop).
-- **remote repository** -- a repository that lives elsewhere, typically online (i.e., it lives "remotely").
-
 -------------------------------------------------------------------------------------------------------------
 ## What is Git?
-Git is a tool for "version control" (alt. "revision control", "versioning"). It is not the only tool for version control; Mercurial is another modern example.
+Git is a tool for "version control" (alt. "revision control", "versioning").
+
+>Git is not the only tool for version control. Microsoft Word and Google Docs, for example, have features for tracking changes. But Git, as we will see, is much more powerful.
 
 ## What is "version control"?
 We've all had this happen before. Researchers do this file naming thing. All. The. Time.
@@ -32,27 +25,11 @@ We do it so we can track the changes we make, collaborate with other researchers
 
 >Hint: we suggest using Git!
 
-So let's set down some functional requirements for version control needed by researchers.
-
-## Functional requirements of version control for researchers
+## What we want (as researchers) from version control software
 
 1. Make it possible to *track changes* to documents, code, data, etc. *over time*
 2. Make it possible to *organize those changes* in meaningful ways
 3. Make it possible to *publish*, *collaborate*, and *share* your work
-
-### 1. Make it possible to track changes
-- Keep track of past versions of files
-- Keep track of which changes were made to which versions of files
-- Keep track of who made which changes and when
-
-### 2. Make it possible to organize changes
-- Group related changes, even if they don't happen at exactly the same time
-- Associate changes with tags or messages that make sense to you and others
-
-### 3. Make it possible to publish, collaborate, and share
-- Publish code and/or data alongside your papers
-- Collaborate with others using your own computer, set up how you like it
-- Share your work with the *entire* world so others can use it, build on it, repeat it, etc.
 
 ### "Make it possible" means the tool must be *simple*
 
@@ -60,7 +37,7 @@ Below is a hammer that you can use to drive a nail (the task of interest) at nea
 
 <img src="/images/claw_hammer.jpg" width="450">
 
-That is what we are shooting for in this lesson.
+***That simple tool is what we are shooting for in this lesson.***
 
 Below is what git gives you out of the box:
 
@@ -71,31 +48,13 @@ Obviously, *this tool is too complicated*. Each individual component is probably
 Instead, this lesson will focus on a narrow subset of what Git can do to make it more approachable (the "Goat Path Git"). Our view is that, as researchers, you are probably pretty good at, well, *researching* how to fix a problem. If we can get you started using some basic aspects of Git, you will be prepared to learn what you need to make the most of it later!
 
 -------------------------------------------------------------------------------------------------------------
-## The Goat Path
-According to the OED, a goat path is: A (narrow) path or track, especially on a hillside or mountain, such as is made by goats.
-
-Here we take a narrow path in describing Git that is useful for researchers who want help with version control for their day-to-day professional lives.
-
-### Why a goat path?
-Well a goat path can be the shortest (and possibly the safest) path to follow in a remote place you're not familiar with. And let's face it, Git is unfamiliar territory! The beauty of a goat path is that those who know their way around (the goats) have traveled the same way so many times before that it's actually cut a visible and easy-to-follow trail. You know this trail is safe because, if it weren't, the goats would not have gone that way in the first place.
-
-In case you've never seen a goat path before, this is one:
-
-<img src="/images/goat_path.jpg" width="450">
-
-If you don't follow the goat path as a beginner, bad things happen sometimes. This is so common with Git that the popular comic XKCD has even commented on it.
-
-<img src="/images/git_xkcd.png" width="450">
-
-[Comic by XKCD](https://xkcd.com/1597/)
-
-***Please note:***
-
->There has been no mention of coding above. That's on purpose; git can be used to perform version control on regular text (manuscripts, dissertations, theses, etc), data (though there are many, many other [probably better] ways to do this), as well as code! Versioning is great. And versioning is really the whole point here. Git just happens to be the tool we use (but there are many other options, go explore!).
-
--------------------------------------------------------------------------------------------------------------
 ## So...what is Git?
-Git is powerful software to help you with version control and collaboration. That is, Git helps you to track and organize changes to your files over time, revisit prior versions of files, and collaborate with others. Git is built for the command line (although it can be managed through various GUIs - [click here for more](https://git-scm.com/downloads/guis)).
+Git is powerful software to help you with version control and collaboration. That is, Git helps you to:
+- track and organize changes to your files over time
+- revisit prior versions of files
+- collaborate with others
+
+Git is built for the command line, and this is how we will learn to use it first (although it can be managed through various GUIs - [click here for more](https://git-scm.com/downloads/guis)).
 
 ## Ok, so what is GitHub then?
 GitHub (and other such platforms) is an online place to facilitate that version control, collaboration, and publication of your work in accordance with the ideals of "open science". They host and manage the servers so you don't have to.
@@ -109,7 +68,7 @@ Plus, as a student, you can have unlimited private repositories with GitHub for 
 
 -------------------------------------------------------------------------------------------------------------
 ## Repositories
-Git uses some special terminology that can be confusing for first-timers. First up is the term **repository**. "Repository" is the term used to refer to a directory (folder) that holds content that Git can keep track of.
+In order to understand Git, we need to understand the concept of a **repository**. "Repository" is the term used to refer to a directory (folder) that holds content that Git can keep track of.
 
 *Conceptually*, a repository is like a database or a digital warehouse. Are you working on a set of files that you want to keep track of using Git? You'll have to put them in a Git repository!
 
@@ -120,13 +79,24 @@ Repositories are often referred to by a shorthand term, **repo**. There is no di
 ### Local vs. Remote Repositories
 There are two "kinds" of repository, **local** repositories and **remote** repositories. The technical difference is nuanced, so I'm instead going to tell you how we will use the terms:
 
-- **Local repository** -- any repository on somebody's *local machine* (e.g., personal laptop, laboratory workstation).
+- **Local repository** -- any repository on somebody's *local computer* (e.g., personal laptop, laboratory workstation).
 - **Remote repository** -- any repository on *GitHub* or a similar online platform.
 
-You can use Git on either a local or a remote repository - it is not necessary to have both. Usually, however, you use both *(i)* one or more local repositories and *(ii)* a remote repository, with the local and remote repositories *linked together*. We will talk more about this later, when we turn to remote repositories. For now, we will learn the basics of git using *local repositories only*.
+You can use Git on either a local or a remote repository - it is not necessary to have both. Usually, however, you use both *(i)* one or more local repositories and *(ii)* a remote repository, with the local and remote repositories *linked together*.
+
+We will start by learning the basics of git using *local repositories only*. Later in the lesson we will introduce remote repositories, and cover how to keep your local and remote repositories synced.
 
 -------------------------------------------------------------------------------------------------------------
-# Guides and resources
+## Terminology Covered
+- **version control** -- Alternative terms include "revision control", "versioning". Version control refers to tracking and organizing changes to code, files, etc. over time. For researchers, good version control software can also help us to collaborate, publish, and share our work with others.
+- **Git** -- A powerful tool for version control.
+- **GitHub** -- An online, open-source-friendly platform for hosting work done with Git (and much more). GitHub is dependent on Git, but Git is not dependent on GitHub!
+- **repository** -- what we call the thing that tracks changes to our files. You might think of it like a database, an invoice, or a receipt of every change you have ever saved.
+- **repo** -- short for repository.
+- **local repository** -- a repository that you have on your *local computer*.
+- **remote repository** -- a repository that lives *remotely*, typically online.
+
+## Guides and resources
 
 [JessiTron: Git Happens (an in-depth look at how Git works)](https://www.youtube.com/watch?v=Dv8I_kfrFWw)
 
