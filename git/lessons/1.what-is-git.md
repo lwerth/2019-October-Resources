@@ -30,6 +30,7 @@ We do it so we can track the changes we make, collaborate with other researchers
 1. Make it possible to *track changes* to documents, code, data, etc. *over time*
 2. Make it possible to *organize those changes* in meaningful ways
 3. Make it possible to *publish*, *collaborate*, and *share* your work
+4. *Not* create 1,000 copies of the same file on our computer!
 
 ### "Make it possible" means the tool must be *simple*
 
@@ -53,26 +54,31 @@ Git is powerful software to help you with version control and collaboration. Tha
 - track and organize changes to your files over time
 - revisit prior versions of files
 - collaborate with others
+- and much more!
 
-Git is built for the command line, and this is how we will learn to use it first (although it can be managed through various GUIs - [click here for more](https://git-scm.com/downloads/guis)).
+Git is built for the command line, and this is how we will learn to use it first (although it can be managed through various [GUIs](https://git-scm.com/downloads/guis)).
 
 ## Ok, so what is GitHub then?
-GitHub (and other such platforms) is an online place to facilitate that version control, collaboration, and publication of your work in accordance with the ideals of "open science". They host and manage the servers so you don't have to.
+GitHub (and other such platforms) is an online place to help you use Git for version control, collaboration, and publication of your work. Think of GitHub as a cloud service that allows you to share your work and collaborate with others using Git.
 
-Let me be clear: Git is *not the same thing* as GitHub! Git is a tool you can use from the command line. It is something you can use on your local machine without ever interacting with GitHub or any other service like it. GitHub, however, is a service/resource that makes using certain aspects of Git easier.
+***Let me be clear:*** Git is *not the same thing* as GitHub!
+- Git: a tool you can use from the command line. Something you can use on your local computer without ever interacting with GitHub or any other service like it.
+- GitHub: a service/resource that makes using certain aspects of Git easier, especially collaboration.
 
 ### Why GitHub, and not some other service?
-Software Carpentries likes GitHub for a few reasons, but perhaps the best reason is that it is very popular! And when collaboration is one of the goals, popular is a good thing :sunglasses:
+We like GitHub for a number of reasons, but perhaps the best reason is that GitHub is very popular! And when collaboration is one of the goals, popular is a good thing :sunglasses:
 
 Plus, as a student, you can have unlimited private repositories with GitHub for the duration of your studentship :nerd_face:
 
 -------------------------------------------------------------------------------------------------------------
 ## Repositories
-In order to understand Git, we need to understand the concept of a **repository**. "Repository" is the term used to refer to a directory (folder) that holds content that Git can keep track of.
+Before we can begin using Git, we need to understand the concept of a **repository**.
 
-*Conceptually*, a repository is like a database or a digital warehouse. Are you working on a set of files that you want to keep track of using Git? You'll have to put them in a Git repository!
+Git functions not by tracking changes just to individual files, but rather by *tracking changes to an entire directory*. "Repository" is the term used to refer to a directory that Git is keeping track of.
 
-*Technically*, a Git repository is any directory that contains a special `.git/` directory inside of it. That `.git/` directory is what handles the operations of Git. It is those Git operations that make the directory function as a repository (by tracking changes) instead of a normal directory (which tracks nothing).
+*Conceptually*, a repository is like a database or a digital warehouse. Are you working on a project that you want to keep track of using Git? Store the project's contents in a Git repository!
+
+*Technically*, a Git repository is any directory that contains a special `.git/` subdirectory inside of it. That `.git/` directory is what handles the operations of Git. It is those Git operations that make the directory function as a repository (by tracking changes to the directory) instead of a normal directory (which tracks nothing).
 
 Repositories are often referred to by a shorthand term, **repo**. There is no difference between these terms (other than 6 letters).
 
