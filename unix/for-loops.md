@@ -54,7 +54,7 @@ echo my_var
 Recall that spaces are special characters on the command line. If we wanted to set a variable that contained spaces, we could surround it in quotations to tell Unix it should be considered as one thing:
 
 ```bash
-my_new_var="ANGUS is awesome."
+my_new_var="Tucson, Arizona, USA"
 
 echo $my_new_var
 ```
@@ -118,58 +118,57 @@ ls
 head words.txt
 ```
 
-<challengeBlock>
 <center><b>QUICK PRACTICE!</b></center>
 
 Notice that we used <htmlCode><b>>></b></htmlCode> as the redirector inside the loop, and not <htmlCode><b>></b></htmlCode>. Why do you think this is? Try running the loop with the <htmlCode><b>></b></htmlCode> redirector instead and writing out to a new file (instead of "words.txt", call it anything else).
 <br>
 
-<div class="wrap-collabsible">
-  <input id="q1" class="toggle" type="checkbox">
-  <label for="q1" class="lbl-toggle">Solution</label>
-  <div class="collapsible-content">
-    <div class="content-inner">
+<details>
+  <summary>Solution</summary>
+  <p>
 
-<pre>for item in cat dog ukulele
-do
-  echo $item
-  echo $item > test.txt
-done</pre>
+  ```bash
+  for item in cat dog ukulele
+  do
+    echo $item
+    echo $item > test.txt
+  done
+  ```
+
+  </p>
+</details>
+
 
 Since <htmlCode><b>></b></htmlCode> overwrites a file, each time we go through the loop it would overwrite the file and at the end we'd be left with just the last iteration, and we'd have a file holding only "ukulele".
 
 <pre>head test.txt</pre>
 
-    </div>
-  </div>
-</div>
-</challengeBlock>
 
-<challengeBlock>
+
 <center><b>QUICK PRACTICE AGAIN!</b></center>
 
 Can you think of where we could put the <htmlCode><b>></b></htmlCode> so that it wouldn't overwrite the file with each iteration of the loop?
 <br>
 
-<div class="wrap-collabsible">
-  <input id="q2" class="toggle" type="checkbox">
-  <label for="q2" class="lbl-toggle">Solution</label>
-  <div class="collapsible-content">
-    <div class="content-inner">
+<details>
+  <summary>Solution</summary>
+  <p>
 
-<pre>for item in cat dog ukulele
-do
-  echo $item
-done > test.txt</pre>
-
+  ```bash
+  for item in cat dog ukulele
+  do
+    echo $item
+  done > test.txt
+  ```
+  
+  </p>
+  
 We didn't need to write to the file inside the loop in this case (though sometimes it's helpful to do so), so we can wait until the loop finishes and then write all the information to a file at once! But notice we took out one of the <htmlCode><b>echo</b></htmlCode> commands, otherwise as written two would have been sent to the output file on each iteration.
 
 <pre>head test.txt</pre>
 
-    </div>
-  </div>
-</div>
-</challengeBlock>
+</details>
+
 
 Usually we won't want to type out the items we're looping over, that was just to demonstrate what's happening. Often we will want to loop through items in a file, like a list of samples or genomes.
 
@@ -202,6 +201,7 @@ For a more practical example, let's pull multiple specific sequences we want fro
 
 
 ### BONUS ROUND: interleaving files with **paste**
+
 A pretty neat use of **`paste`** is to interleave two files. What **`paste`** is doing is sticking two files together, line-by-line, with some delimiter (separating character) in between them. This delimiter by default is a **`tab`** character, but we can set it to other things too, including a *newline* character. To demonstrate this, let's make a fasta-formatted sequence file from our genes in the previous lesson.
 
 >"Fasta" is a common format for holding sequence information. In it, each sequence entry takes up two lines: the first is the name of the sequence and needs to be preceded by a **`>`** character; and the second line is the sequence. It looks like this:
