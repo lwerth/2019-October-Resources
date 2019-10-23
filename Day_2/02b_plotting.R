@@ -12,10 +12,10 @@ install.packages("ggplot2")
 library(ggplot2)
 
 # Shouldn't need the blow command
-setwd("~/SCW_R_Oct_2019")
+# setwd("~/SCW_R_Oct_2019")
 
 
-gapminder = read.csv(file = "gapminder_clean.csv")
+gapminder = read.csv(file = "gapminder_clean.csv", stringsAsFactors = FALSE)
 
 ?ggplot
 # ggplot2 is built on the grammar of graphics, the idea that any plot can be expressed from the same set of components: 
@@ -80,7 +80,6 @@ ggplot(data = gapminder, mapping = aes(x=year, y=lifeExp, by=country)) +
 ggplot(data = gapminder, mapping = aes(x=year, y=lifeExp, by=country)) +
   geom_point() + geom_line(mapping = aes(color=continent))
 
-
 # Let do some stats in our plots!
 
 ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
@@ -92,11 +91,11 @@ ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
 # alpha controls the opaquness of the points from geom_point
 # scale_x_log10() makes the plot's x-axis on a log scale instead of linear
 
-# Tip
-# alpha can be based on the country by using:
-# geom_point(mapping = aes(alpha = continent))
-ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp, alpha = continent)) +
-  geom_point() + scale_x_log10()
+# # Tip
+# # alpha can be based on the country by using:
+# # geom_point(mapping = aes(alpha = continent))
+# ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp, alpha = continent)) +
+#   geom_point() + scale_x_log10()
 
 #But let's not
 ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
@@ -124,6 +123,7 @@ ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
 ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
   geom_point(size=3, color="green") + scale_x_log10() +
   geom_smooth(method="lm", size=1.5)
+
 
 # Challange:
 # Now change the shape of the points and
@@ -215,4 +215,18 @@ ggplot(data = gapminder, mapping = aes(x = gdpPercap, fill=continent)) +
 
 
 
+###############################################
+###########         IF TIME         ###########
+###############################################
+# Boxplots
+ggplot(data=gapminder, mapping = aes(x=continent, y=lifeExp, color=continent)) +
+  geom_boxplot()
+
+ggplot(data=gapminder, mapping = aes(x=continent, y=lifeExp, fill=continent)) +
+  geom_boxplot()
+
+
+###############################################
+###########         IF TIME         ###########
+###############################################
 
