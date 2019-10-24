@@ -49,28 +49,28 @@ The **`wc`** (**w**ord **c**ount) command is useful for counting how many lines,
 wc example.txt
 ```
 
-<challengeBlock>
+
 <center><b>QUICK PRACTICE!</b></center>
 
 How can we get <i>only</i> the number of lines in a file from the <htmlCode>wc</htmlCode> command?
 <br>
 
-<div class="wrap-collabsible">
-  <input id="q1" class="toggle" type="checkbox">
-  <label for="q1" class="lbl-toggle">Solution</label>
-  <div class="collapsible-content">
-    <div class="content-inner">
-		<pre>wc -l example.txt</pre>
 
+<details>
+  <summary>Solution</summary>
+  <p>
+
+  ```bash
+  wc -l example.txt
+  ```
 Adding the optional flag <htmlCode>-l</htmlCode> will print just how many lines are in a file. We could find this out by running <htmlCode>wc --help</htmlCode> or by visiting our good friend Google 🙂
 <br>
 <br>
 <center>Printing out how many lines are in a file like this is super-useful for things like quickly seeing how many rows are in a large table, or how many sequences are in a file.</center>
 
-    </div>
-  </div>
-</div>
-</challengeBlock>
+  </p>
+</details>
+
 <br>
 
 The most common command-line tools like these and many others we'll see are mostly only useful for operating on what are known as **plain-text files** – also referred to as "flat files".
