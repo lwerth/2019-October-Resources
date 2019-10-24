@@ -689,14 +689,14 @@ We are going to create a remote repository on GitHub now.
 2. Click on the `+` drop-down menu at the top right of the screen
 3. Click on `New repository`
 
-<img source="images/GitHub_new_repo.png">
+<img src="images/GitHub_new_repo.png">
 
 4. Name the repository `workshop` (the name should match your local repository)
 5. Add a description. This repo will serve as a record of some of what you did in this workshop after you leave, so you may want the description to reflect that
 6. **DO NOT CHECK OR CHANGE ANYTHING ELSE**
 7. Click `Create repository`
 
-<img source="images/GitHub_new_repo_form.png">
+<img src="images/GitHub_new_repo_form.png">
 
 >If we did not already have a local repo, we could have checked `Initialize this repository with a README`. Since we do have a local repo, however, we don't want any files in this remote repo until we have synced it with our local repo.
 
@@ -712,7 +712,7 @@ Scroll down to where it says `...or push an existing repository from the command
 
 On the far right of the screen, click the icon that looks like a clipboard with an arrow. This will copy the Git commands you see below the heading:
 
-<img source="images/GitHub_copy_commands.png">
+<img src="images/GitHub_copy_commands.png">
 
 Return to your command line, and ***make sure you are in your local repo***.
 
@@ -756,7 +756,7 @@ Due to limited time, we won't add a `LICENSE` or a `.gitignore` file. But you ca
 
 We will, however, add a `README`. To add a `README`, click on the green `Add a README` button located under the list of files and commits:
 
-<img source="images/GitHub_add_readme.png">
+<img src="images/GitHub_add_readme.png">
 
 Notice that the file already contains:
 1. the name of your repo
@@ -774,7 +774,7 @@ Add a *precise, concise, and informative* commit message about the changes you j
 
 Making sure that `commit directly to the master branch` is still selected, click on `Commit changes`.
 
-<img source="images/GitHub_commit.png">
+<img src="images/GitHub_commit.png">
 
 GitHub just performed the following for you on the remote repository:
 
@@ -850,7 +850,7 @@ Let's practice using `git push` by changing something in the local repository an
 `readme.txt` is still empty from before. Let's add some notes about what we have learned:
 
 ```bash
-nano Day_1/git/practice.txt
+nano /git_lesson/practice.txt
 ```
 
 Now let's verify that we are on the same page as Git:
