@@ -90,31 +90,31 @@ Unless we tell **`cut`** the delimiter is a comma, which we can do with the **`-
 cut -d , -f 1-3 example_gene_annotations.csv | head
 ```
 
-<challengeBlock>
 <center><b>QUICK PRACTICE!</b></center>
 
 From our tab-delimited file, "<b>gene_annotations.tsv</b>", try to make a new file that has just 2 columns: the gene_ID and KO_annotation columns (remember the <htmlCode><b>></b></htmlCode> redirector). Name the new file "<b>IDs_and_annotations.tsv</b>".
 <br>
 
-<div class="wrap-collabsible">
-  <input id="q1" class="toggle" type="checkbox">
-  <label for="q1" class="lbl-toggle">Solution</label>
-  <div class="collapsible-content">
-    <div class="content-inner">
+<details>
+  <summary>Solution</summary>
+  <p>
 
-<pre>cut -f 1,4 gene_annotations.tsv | head
-cut -f 1,4 gene_annotations.tsv > IDs_and_annotations.tsv
-head IDs_and_annotations.tsv</pre>
+  ```bash
+  cut -f 1,4 gene_annotations.tsv | head
+  cut -f 1,4 gene_annotations.tsv > IDs_and_annotations.tsv
+  head IDs_and_annotations.tsv
+  ```
+  
+  And to make sure it holds all 101 lines and not just the first 10!
+  
+  ```bash
+  wc -l IDs_and_annotations.tsv
+  ```
 
-And to make sure it holds all 101 lines and not just the first 10!
+  </p>
+</details>
 
-<pre>wc -l IDs_and_annotations.tsv</pre>
-
-    </div>
-  </div>
-</div>
-</challengeBlock>
-
+<br>
 
 ## grep  
 **`grep`** (**g**lobal **r**egular **e**x**p**ression) is a search tool. It looks through text files for strings (sequences of characters). In its default usage, **`grep`** will look for whatever string of characters you give it (1st positional argument), in whichever file you specify (2nd positional argument), and then print out the lines that contain what you searched for. Let's try it:
@@ -153,24 +153,19 @@ grep K18979 gene_annotations.tsv
 
 It seems the first one wasn't found in our genomes, but the second one is in there twice!
 
-<challengeBlock>
 <center><b>QUICK PRACTICE!</b></center>
 
 Using a combination of <htmlCode><b>grep</b></htmlCode> and <htmlCode><b>cut</b></htmlCode>, how could we print out just the genomes (column 2) that have the "K18979" annotation.
 <br>
 
-<div class="wrap-collabsible">
-  <input id="q2" class="toggle" type="checkbox">
-  <label for="q2" class="lbl-toggle">Solution</label>
-  <div class="collapsible-content">
-    <div class="content-inner">
+<details>
+  <summary>Solution</summary>
+  <p>
 
-<pre>grep K18979 gene_annotations.tsv | cut -f 2</pre>
+  ```bash
+  grep K18979 gene_annotations.tsv | cut -f 2
+  ```
 
-    </div>
-  </div>
-</div>
-</challengeBlock>
 
 We're just scratching the surface of what **`grep`** can do, but one thing worth mentioning is the **`-c`** flag. This tells **`grep`** to just report how many lines matched, instead of printing them to the screen:
 
