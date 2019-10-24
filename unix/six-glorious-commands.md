@@ -165,7 +165,8 @@ Using a combination of <htmlCode><b>grep</b></htmlCode> and <htmlCode><b>cut</b>
   ```bash
   grep K18979 gene_annotations.tsv | cut -f 2
   ```
-
+  </p>
+</details>
 
 We're just scratching the surface of what **`grep`** can do, but one thing worth mentioning is the **`-c`** flag. This tells **`grep`** to just report how many lines matched, instead of printing them to the screen:
 
