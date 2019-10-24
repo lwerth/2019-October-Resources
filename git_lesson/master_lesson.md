@@ -125,14 +125,14 @@ In this lesson, we will:
 ## Initializing a local Git Repository
 Congratulations, you are about to start actually using Git!
 
-To begin the lesson, navigate into the `git` directory found inside `Day_1` of the `workshop` directory.
+To begin the lesson, navigate into the `git_lesson` directory found inside the `workshop` directory we had you download earlier.
 
 <details>
   <summary>Solution</summary>
   <p>
 
   ```bash
-  cd ~/Desktop/workshop/Day_1/git
+  cd ~/Desktop/workshop/git_lesson
   ```
 
   </p>
@@ -268,12 +268,12 @@ First, make sure you're at the top of the `workshop` directory:
   <p>
 
   ```bash
-  cd ../..
+  cd ..
   ```
 
   </p>
 
-  (Goes up one level from `git` to `Day_1`, then goes up one level from `Day_1` to `workshop`.)
+  (Goes up one level from `git_lesson` to `workshop`.)
 
 </details>
 
@@ -342,7 +342,7 @@ Here is a basic cycle that you can follow to work with Git:
 Let's give it a try! First, let's navigate into the `git` directory inside our repo.
 
 ```bash
-cd ~/Desktop/workshop/Day_1/git
+cd ~/Desktop/workshop/git_lesson
 ```
 
 Right now, this folder should be empty:
@@ -394,7 +394,7 @@ And what do we need to do next?
 
 Great! you have now made **2 commits** to the workshop repository:
 1. You committed the files that were in the `workshop` directory to the repository
-2. You committed a new file to the `workshop/Day_1/git` subdirectory
+2. You committed a new file to the `workshop/git_lesson` subdirectory
 
 -------------------------------------------------------------------------------------------------------------
 ## Improving Our Git-based Work Cycle with `git status` and `git diff`
@@ -463,10 +463,10 @@ git diff
 You should get an output like the following:
 
 ```text
-diff --git a/Day_1/git/practice.txt b/Day_1/git/practice.txt
+diff --git a/git_lesson/practice.txt b/git_lesson/practice.txt
 index e69de29..b5cfe91 100644
---- a/Day_1/git/practice.txt
-+++ b/Day_1/git/practice.txt
+--- a/git_lesson/practice.txt
++++ b/git_lesson/practice.txt
 @@ -0,0 +1 @@
 +This line was added to 'practice.txt' using '>>' in bash
 ```
