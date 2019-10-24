@@ -16,14 +16,15 @@
 ---
 ## Download Workshop Folder
 
-Please copy and paste the following commands into your terminal window. We will talk more about how exactly these commands work soon.  
+Click on the following link to navigate to a webpage from where we can download the workshop folder containing lessons and exercises for Day-1:
 
-```
-cd ~
-curl -L -o unix_intro.tar.gz https://osf.io/8dfmv/download
-tar -xzvf unix_intro.tar.gz && rm unix_intro.tar.gz
-cd unix_intro
-```
+https://osf.io/djsmy/
+
+<center><a href="../images/osf_download.png"><img src="../images/osf_download.png" width="80%"></a></center>
+<br>
+
+Unzip the folder and move it to your Desktop. Hooray! we are ready to go!
+
 ---
 
 # A few foundational rules
