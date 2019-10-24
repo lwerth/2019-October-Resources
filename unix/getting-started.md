@@ -18,9 +18,12 @@
 
 Click on the following link to navigate to a webpage from where we can download the workshop folder containing lessons and exercises for Day-1:
 
-https://osf.io/djsmy/
+**https://osf.io/djsmy/**
+
+<br>
 
 <center><a href="../images/osf_download.png"><img src="../images/osf_download.png" width="80%"></a></center>
+
 <br>
 
 Unzip the folder and move it to your Desktop. Hooray! we are ready to go!
