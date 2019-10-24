@@ -125,8 +125,22 @@ So there are 900 files here, and it looks like there are 3 different extensions:
 With 900 files and 3 file types (".txt", ".tsv", and ".fq"), we might expect there to be 300 of each type, but let's make sure. Using what we've seen above, how can we count how many files of each type there are in this directory?
 <br>
 
-> ls *.txt | wc -l<br>ls *.tsv | wc -l<br>ls *.fq | wc -l
+<details>
+  <summary>Solution</summary>
+  <p>
 
+  ```bash
+  ls *.txt | wc -l
+  
+  ls *.tsv | wc -l
+  
+  ls *.fq | wc -l
+  ```
+
+  </p>
+</details>
+
+ 
 Ah good, it's nice when things make sense 🙂
 
 
@@ -153,9 +167,18 @@ ls | wc -l
 Why does this say 601 instead of 600?
 <br>
 
-> It's also counting the new directory we created 🙂
+<details>
+  <summary>Solution</summary>
+  <p>
 
+  ```bash
+  It's also counting the new directory we created 🙂
+  ```
 
+  </p>
+</details>
+
+ 
 > **Note:** When using wildcards, running **`ls`** first like done in the above example (**`ls *.fq`**) is good practice before actually running a command. It is a way of checking that we are specifying exactly what we think we are specifying.
 
 
@@ -182,17 +205,25 @@ We can also use the up and down arrows at the command line to scroll through pre
 We've already moved all the ".fq" files into their own directory. Create separate directories for the ".txt" files and the ".tsv" files too, and then try to move those files into their appropriate directories.
 <br>
 
-```
-mkdir text_files
-ls *.txt
-mv *.txt text_files
+<details>
+  <summary>Solution</summary>
+  <p>
 
-mkdir tsv_files
-ls *.tsv
-mv *.tsv tsv_files
+  ```bash
+  mkdir text_files
+  ls *.txt
+  mv *.txt text_files
 
-ls
-```
+  mkdir tsv_files
+  ls *.tsv
+  mv *.tsv tsv_files
+
+  ls
+  ```
+
+  </p>
+</details>
+
 
 It doesn't matter what the directories are named, but at the end they should be the only 3 things in the working directory 🙂
 
