@@ -20,7 +20,7 @@ Please copy and paste the following commands into your terminal window. We will 
 
 ```
 cd ~
-curl -L -o unix_intro.tar.gz https://ndownloader.figshare.com/files/15573746
+curl -L -o unix_intro.tar.gz https://osf.io/8dfmv/download
 tar -xzvf unix_intro.tar.gz && rm unix_intro.tar.gz
 cd unix_intro
 ```
