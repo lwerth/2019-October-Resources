@@ -16,7 +16,7 @@
 ---
 ## Download Workshop Folder
 
-Click on the following link to navigate to a webpage from where we can download the workshop folder containing lessons and exercises for Day-1:
+1. Click on the following link to navigate to a webpage from where we can download the workshop folder containing lessons and exercises for Day-1:
 
 **https://osf.io/djsmy/**
 
@@ -25,8 +25,14 @@ Click on the following link to navigate to a webpage from where we can download 
 <center><a href="../images/osf_download.png"><img src="../images/osf_download.png" width="80%"></a></center>
 
 <br>
+2. Unzip the folder and move it to your Desktop. 
+<br>
+3. Open UNIX shell on your computer and type the following (copy paste the following command is also fine):
 
-Unzip the folder and move it to your Desktop. Hooray! we are ready to go!
+```
+cd Desktop/workshop
+```
+Hooray! we are ready to go!
 
 ---
 
