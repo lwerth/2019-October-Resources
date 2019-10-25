@@ -17,9 +17,11 @@ Git is a tool for "version control" (alt. "revision control", "versioning").
 ## What is "version control"?
 We've all had this happen before. Researchers do this file naming thing. All. The. Time.
 
-<p align="center"><img src="/images/phd101212s.gif" width="450"></p>
+<p align="center">
+<img src="/images/phd101212s.gif" width="450">
 
 [Comic by Jorge Cham](http://phdcomics.com/comics/archive.php?comicid=1531)
+</p>
 
 We do it so we can track the changes we make, collaborate with other researchers, and revisit old versions of our files. But there's a better way!
 
@@ -125,28 +127,28 @@ In this lesson, we will:
 ## Initializing a local Git Repository
 Congratulations, you are about to start actually using Git!
 
-To begin the lesson, navigate into the `git_lesson` directory found inside the `workshop` directory we had you download earlier.
+To begin the lesson, navigate into the `workshop` directory we had you download earlier.
 
 <details>
   <summary>Solution</summary>
   <p>
 
   ```bash
-  cd ~/Desktop/workshop/git_lesson
+  cd ~/Desktop/workshop/
   ```
 
   </p>
 </details>
 
 Now...a local Git repository is just a directory on your computer that you tell Git to keep track of.
-So let's make a fresh directory called `temp` to get started.
+So let's make a fresh directory called `git_lesson` to get started.
 
 <details>
   <summary>Solution</summary>
   <p>
 
   ```bash
-  mkdir temp
+  mkdir git_lesson
   ```
 
   </p>
@@ -155,7 +157,7 @@ So let's make a fresh directory called `temp` to get started.
 Now we can convert this directory into a Git repository using the `git init` command. First, we navigate into the directory:
 
 ```bash
-cd temp
+cd git_lesson
 ```
 
 And then we initialize the repository with `git init`:
@@ -168,7 +170,7 @@ And voilà! We have a Git repository!
 
 ### How do I know it worked?
 Remember, Git repositories are just directories that contain a special `.git` directory inside them.
-To see that this is the case, let's list **ALL** the contents of the `temp` directory.
+To see that this is the case, let's list **ALL** the contents of the `git_lesson` directory.
 
 <details>
   <summary>Solution</summary>
@@ -220,23 +222,6 @@ Remember: a local Git repository is just a directory with a `.git` subdirectory.
 </details>
 
 Boom. Problem solved :wink:
-
-Now, remove the `temp` directory (it was only ever meant to be temporary).
-
-<details>
-  <summary>Solution</summary>
-  <p>
-
-  ```bash
-  cd ..
-  rm -r temp
-  ```
-
-  </p>
-
-  Notice that you have to go up to the parent directory before you can remove `temp`.
-
-</details>
 
 ### Do I have to start from a new directory?
 Suppose you have a project you've been working on and you want to start tracking it with Git.
@@ -320,9 +305,11 @@ This two-step process is the essence of how Git works. Rather than a single `sav
 
 This two-step process is represented here:
 
-<p align="center"><img src="/images/local_git.png", width="80%"></p>
+<p align="center">
+<img src="/images/local_git.png", width="80%">
 
 [Image adapted from post by Zvonimir Spajic at HackerNoon (Medium)](https://medium.com/hackernoon/understanding-git-index-4821a0765cf)
+</p>
 
 The **working directory**, or **working copy**, is the copy of the repository that you have on your computer right now. It's called that because it's the copy of the repository that you are working on.
 
@@ -526,8 +513,9 @@ Now that we've learned bout `git status` and `git diff`, let's update our Git-ba
 2. `git status`: see what files have changed since the last commit
 3. `git diff`: see all the changes between your working copy and the staging area
 4. `git add <file>`: add changes you made to <file> to the staging area
-5. `git commit --message "COMMIT MESSAGE"`: commit your staged changes to the repository with a message
-6. Rinse and repeat
+5. `git status` (again): confirm that you are about to commit what you think you are about to commit
+6. `git commit --message "COMMIT MESSAGE"`: commit your staged changes to the repository with a message
+7. Rinse and repeat as needed
 
 Bravo! :clap: You've made another commit, and learned about `git status` and `git diff`!
 
@@ -574,7 +562,7 @@ The commit itself has an arbitrary character sequence (called a hash) as a label
 Using the same repo we were just working on, I want you to:
 1. Change the line you wrote to `practice.txt` to be something else
 2. Have Git tell you what you changed in `practice.txt`. How is a change to a single line represented?
-3. Add a new file called `readme.txt`
+3. Add a new file to the `git_lesson` directory. Call it whatever you want.
 4. Make a *single commit* with *both* of these two changes included in the commit
 5. Review the commit history to confirm your last commit
 
@@ -603,11 +591,12 @@ Using the same repo we were just working on, I want you to:
 
   If you changed the line in `practice.txt`, the `diff` report should have the *old line preceded by a -*, and the *new line preceded by a +*.
 
-  #### Add a new file to the repo called `readme.txt`
+  #### Add a new file to the `git_lesson` directory
   <p>
 
   ```bash
-  touch readme.txt
+  cd ~/Desktop/workshop/git_lesson/
+  touch file.txt
   ```
 
   </p>
@@ -616,7 +605,7 @@ Using the same repo we were just working on, I want you to:
   <p>
 
   ```bash
-  git add readme.txt
+  git add file.txt
   git add practice.txt
   git status
   git commit --message "add line to file and add new file in same commit"
@@ -847,10 +836,10 @@ The final piece of keeping your local and remote repositories synced is `git pus
 
 Let's practice using `git push` by changing something in the local repository and pushing it up to the remote repo.
 
-`readme.txt` is still empty from before. Let's add some notes about what we have learned:
+`file.txt` (or whatever you chose to call it) is still empty from before. Let's add some notes about what we have learned:
 
 ```bash
-nano /git_lesson/practice.txt
+nano /git_lesson/file.txt
 ```
 
 Now let's verify that we are on the same page as Git:
@@ -862,7 +851,7 @@ git status
 Git's reporting that we modified a file. Good! Now let's add those changes to the staging area:
 
 ```bash
-git add readme.txt
+git add file.txt
 ```
 
 Let's double-check that it worked as expected:
@@ -891,9 +880,11 @@ That's it! Let's make sure GitHub is reflecting that last commit in our remote r
 
 This gives us an updated picture of what we are doing with Git:
 
-<p align="center"><img src="/images/git_flow.png", width="80%"></p>
+<p align="center">
+<img src="/images/git_flow.png", width="80%">
 
 [Image from blog post by Vassilis Kehayas](https://neurathsboat.blog/post/git-intro/)
+</p>
 
 -------------------------------------------------------------------------------------------------------------
 ## An Updated Git-based Work Cycle
@@ -903,7 +894,7 @@ Here's what I do every time I sit down to work on a project that I'm tracking wi
 1. `git pull` -- Pull changes from the remote repository. I do this even if I haven't changed anything just to be safe and make it a habit.
 2. `git log` -- Remind myself of my recent activity in the repository. What are my recent commits?
 3. Do some work.
-4. `git status` -- Remind myself of the work I just did, in broad strokes (files added, delted, or modified).
+4. `git status` -- Remind myself of the work I just did, in broad strokes (files added, deleted, or modified).
 6. `git diff` -- Remind myself of the work I just did, in terms of the specific changes made.
 7. `git add <file>` -- Once I'm sure I want to commit changes to a given file, I add the file to the staging area.
 8. `git commit --message "..."` -- Commit all the changes that I have added to the staging area with a clear message.
