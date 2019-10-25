@@ -30,10 +30,10 @@
 
 <br>
 
-3. Open UNIX shell on your computer (git bash for windows users)and type the following to move into the workshop folder (copy pasting the following command is also ok):
+3. Open **UNIX** shell on your computer (**git bash for windows**)and **copy-paste** the following to **move** into the workshop folder:
 
 ```
-cd Desktop/workshop/unix_intro
+cd ~/Desktop/workshop/unix_intro
 ```
 Hooray! we are ready to go!
 
@@ -100,12 +100,12 @@ There are also optional arguments for the **`head`** command. The default for **
 head -n 5 example.txt
 ```
 
-How would we know we needed the **`-n`** flag for that? There are a few ways to find out. Many standard Unix commands and other programs will have built-in help menus that we can access by providing **`-h`** or **`--help`** as the only argument:
+How would we know we needed the **`-n`** flag for that? There are a few ways to find out. Many standard Unix commands come with a manual page of instructions on usage which can be accessed using the **`man`** command and also these programs will have built-in help menus that we can access by providing **`-h`** or **`--help`** as the only argument. Try using:
 
 ```bash
-head -h
-head --help
+man head
 ```
+The information of a man page is displayed through another unix program called **`less`**. To exit out of the man page press the key **`q`**.
 
 And/or we can go to google to look for help. This is one of the parts that is not about memorization at all. We might remember a few if we use them a lot, but searching for options and details when needed is definitely the norm!
 
@@ -152,7 +152,7 @@ head example.txt
 We can also run the same command on the same file using an **absolute path**:
 
 ```bash
-head ~/unix_intro/example.txt
+head ~/Desktop/workshop/unix_intro/example.txt
 ```
 
 The previous two commands both point to the same file right now. But the first way, **`head example.txt`**, will only work if we are entering it while "sitting" in the directory that holds that file, while the second way will work no matter where we happen to be in the computer.
