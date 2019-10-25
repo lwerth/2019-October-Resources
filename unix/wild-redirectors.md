@@ -17,7 +17,7 @@
 
 >To be sure we are still working in the same place, let's run:
 >```bash
->cd ~/unix_intro
+>cd ~/Desktop/workshop/unix_intro
 >```
 
 ## Redirectors
@@ -120,9 +120,12 @@ ls | wc -l
 
 So there are 900 files here, and it looks like there are 3 different extensions: ".txt"; ".tsv", and ".fq" (a common extension for the "fastq" format, which holds sequences and their quality information).
 
-<center><b>QUICK PRACTICE!</b></center>
+> <center><b>QUICK PRACTICE!</b></center>
 
-With 900 files and 3 file types (".txt", ".tsv", and ".fq"), we might expect there to be 300 of each type, but let's make sure. Using what we've seen above, how can we count how many files of each type there are in this directory?
+<br>
+
+> With 900 files and 3 file types (".txt", ".tsv", and ".fq"), we might expect there to be 300 of each type, but let's make  sure. Using what we've seen above, how can we count how many files of each type there are in this directory?
+
 <br>
 
 <details>
@@ -140,7 +143,8 @@ With 900 files and 3 file types (".txt", ".tsv", and ".fq"), we might expect the
   </p>
 </details>
 
- 
+<br>
+
 Ah good, it's nice when things make sense 🙂
 
 
@@ -165,6 +169,7 @@ ls | wc -l
 <center><b>QUICK QUESTION!</b></center>
 
 Why does this say 601 instead of 600?
+
 <br>
 
 <details>
@@ -181,6 +186,7 @@ Why does this say 601 instead of 600?
  
 > **Note:** When using wildcards, running **`ls`** first like done in the above example (**`ls *.fq`**) is good practice before actually running a command. It is a way of checking that we are specifying exactly what we think we are specifying.
 
+<br> 
 
 ### BONUS ROUND: History!
 
@@ -202,7 +208,10 @@ We can also use the up and down arrows at the command line to scroll through pre
 
 <center><b>QUICK PRACTICE!</b></center>
 
+<br>
+
 We've already moved all the ".fq" files into their own directory. Create separate directories for the ".txt" files and the ".tsv" files too, and then try to move those files into their appropriate directories.
+
 <br>
 
 <details>
@@ -227,7 +236,7 @@ We've already moved all the ".fq" files into their own directory. Create separat
 
 It doesn't matter what the directories are named, but at the end they should be the only 3 things in the working directory 🙂
 
-
+<br>
 
 <h3>The question mark (<b>?</b>)</h3>
 
