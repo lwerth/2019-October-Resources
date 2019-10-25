@@ -21,7 +21,7 @@ Next we're going to look at some more ways to learn about and manipulate file an
 
 >To be sure we are still working in the same place, let's run:
 >```bash
->cd ~/unix_intro
+>cd ~/Desktop/workshop/unix_intro
 >```
 
 
@@ -91,6 +91,8 @@ Common types of plain-text files are those ending with extensions like ".txt", "
 <center><h2>WARNING!</h2></center>
 <b>Using commands that do things like create, copy, and move files at the command line will overwrite files if they have the same name. And using commands that delete things will do so permanently. Use caution while getting used to things – and then forever after</b> 🙂
 </div>
+
+<br>
 
 The commands **`cp`** and **`mv`** (**c**o**p**y and **m**o**v**e) have the same basic structure. They both require two positional arguments – the first is the file you want to act on, and the second is where you want it to go (which can include the name you want to give it).
 
