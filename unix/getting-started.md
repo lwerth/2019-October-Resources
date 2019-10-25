@@ -33,7 +33,7 @@
 3. Open UNIX shell on your computer (git bash for windows users)and type the following to move into the workshop folder (copy pasting the following command is also ok):
 
 ```
-cd Desktop/workshop
+cd Desktop/workshop/unix_intro
 ```
 Hooray! we are ready to go!
 
