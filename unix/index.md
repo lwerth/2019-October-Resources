@@ -28,3 +28,8 @@ Here are some terms that are often used interchangeably – not because it's imp
 	5. [Variables and For loops](/unix/for-loops.md)  
 
 ---
+
+Credits:
+
++ Happy Belly Bioinformatics [![DOI](https://jose.theoj.org/papers/10.21105/jose.00053/status.svg)](https://doi.org/10.21105/jose.00053)
++ [The Carpentries](http://swcarpentry.github.io/shell-novice/)
