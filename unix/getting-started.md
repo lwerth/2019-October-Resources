@@ -25,9 +25,12 @@
 <center><a href="../images/osf_download.png"><img src="../images/osf_download.png" width="80%"></a></center>
 
 <br>
+
 2. Unzip the folder and move it to your Desktop. 
+
 <br>
-3. Open UNIX shell on your computer and type the following (copy paste the following command is also fine):
+
+3. Open UNIX shell on your computer (git bash for windows users)and type the following to move into the workshop folder (copy pasting the following command is also ok):
 
 ```
 cd Desktop/workshop
