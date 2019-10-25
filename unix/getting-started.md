@@ -26,7 +26,7 @@
 
 <br>
 
-2. Unzip the folder and move it to your Desktop. 
+2. **Unzip** the folder and **move** it to your **Desktop**. 
 
 <br>
 
