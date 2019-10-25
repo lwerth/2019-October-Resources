@@ -15,7 +15,7 @@
 
 >To be sure we are still working in the same place, let's run:
 >```bash
->cd ~/unix_intro
+>cd ~/Desktop/workshop/unix_intro
 >```
 
 
@@ -31,7 +31,7 @@ We'll mostly be working with a file here called "gene_annotations.tsv", which is
 We can see the file has 4 columns: "gene_ID", "genome", "KO_ID", and "KO_annotation" (KO is for **K**egg **O**rthology, a popular functional database). Let's change into our working directory for this page and explore it a little at the command line with some of the things we've seen already.
 
 ```bash
-cd ~/unix_intro/six_commands/
+cd ~/Desktop/workshop/unix_intro/six_commands/
 head gene_annotations.tsv
 ```
 
@@ -92,7 +92,10 @@ cut -d , -f 1-3 example_gene_annotations.csv | head
 
 <center><b>QUICK PRACTICE!</b></center>
 
+<br>
+
 From our tab-delimited file, "<b>gene_annotations.tsv</b>", try to make a new file that has just 2 columns: the gene_ID and KO_annotation columns (remember the <htmlCode><b>></b></htmlCode> redirector). Name the new file "<b>IDs_and_annotations.tsv</b>".
+
 <br>
 
 <details>
@@ -155,7 +158,10 @@ It seems the first one wasn't found in our genomes, but the second one is in the
 
 <center><b>QUICK PRACTICE!</b></center>
 
+<br>
+
 Using a combination of <htmlCode><b>grep</b></htmlCode> and <htmlCode><b>cut</b></htmlCode>, how could we print out just the genomes (column 2) that have the "K18979" annotation.
+
 <br>
 
 <details>
