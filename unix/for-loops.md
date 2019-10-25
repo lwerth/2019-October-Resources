@@ -20,7 +20,7 @@ Loops are extremely powerful in all programming languages. They are what let us 
 
 >To be sure we are still working in the same place, let's run:
 >```bash
->cd ~/unix_intro
+>cd ~/Desktop/workshop/unix_intro
 >```
 
 
@@ -84,30 +84,30 @@ There are 4 special words in the syntax of a For Loop in Unix languages: `for`, 
 | **`done`** | tell the computer we are done telling it what to do with each item |
 
 
-Let's see what this looks like in practice. Here we are going to: name the variable "item" (we can name this whatever we want); loop over 3 words (cat, dog, and ukulele); and we're going to just `echo` each item, which will print each word to the terminal.
+Let's see what this looks like in practice. Here we are going to: name the variable "item" (we can name this whatever we want); loop over 3 words (earth, mars, and venus); and we're going to just **`echo`** each item, which will print each word to the terminal.
 
 ```bash
-for item in cat dog ukulele
+for item in earth mars venus 
 do
   echo $item
 done
 ```
 
-> **Note:** Notice the prompt is different while we are within the loop syntax. On the jetstream instances we're working on, it shows `and...> ` until we finish the loop with **`done`**. This might look different if you are on a different system, but it will be something distinct from the normal prompt. If you get stuck with that alternate prompt and you want to get rid of it, you can press **`ctrl + c`** to cancel it.
+> **Note:** Notice the prompt is different while we are within the loop syntax. It will show `and...> ` until we finish the loop with **`done`**. This might look different if you are on a different system, but it will be something distinct from the normal prompt. If you get stuck with that alternate prompt and you want to get rid of it, you can press **`ctrl + c`** to cancel it.
 
 Just to note, we don't need to put these on separate lines, and we don't need to indent over the "body" of the loop like we did above (the `echo $item` part), but both can help with readability so we will continue doing that moving forward. As an example though, we could also enter it like this on one line, separating the major blocks with semicolons:
 
 ```bash
-for word in cat dog ukulele; do echo $word; done
+for word in earth mars venus; do echo $word; done
 ```
 
 We can also do multiple things within the body of the loop (the lines between the special words **`do`** and **`done`**). Here we'll add another line that also writes the words into a file we'll call "words.txt":
 
 ```bash
-for item in cat dog ukulele
+for item in earth mars venus
 do
   echo $item
-  echo $item >> words.txt
+  echo $item >> planets.txt
 done
 ```
 
@@ -115,12 +115,15 @@ Now we created a new file that holds these words:
 
 ```bash
 ls
-head words.txt
+head planets.txt
 ```
 
 <center><b>QUICK PRACTICE!</b></center>
 
-Notice that we used <htmlCode><b>>></b></htmlCode> as the redirector inside the loop, and not <htmlCode><b>></b></htmlCode>. Why do you think this is? Try running the loop with the <htmlCode><b>></b></htmlCode> redirector instead and writing out to a new file (instead of "words.txt", call it anything else).
+<br>
+
+Notice that we used <htmlCode><b>>></b></htmlCode> as the redirector inside the loop, and not <htmlCode><b>></b></htmlCode>. Why do you think this is? Try running the loop with the <htmlCode><b>></b></htmlCode> redirector instead and writing out to a new file (instead of "planets.txt", call it anything else).
+
 <br>
 
 <details>
@@ -128,7 +131,7 @@ Notice that we used <htmlCode><b>>></b></htmlCode> as the redirector inside the 
   <p>
 
   ```bash
-  for item in cat dog ukulele
+  for item in earth mars venus
   do
     echo $item
     echo $item > test.txt
@@ -139,7 +142,7 @@ Notice that we used <htmlCode><b>>></b></htmlCode> as the redirector inside the 
 </details>
 
 
-Since <htmlCode><b>></b></htmlCode> overwrites a file, each time we go through the loop it would overwrite the file and at the end we'd be left with just the last iteration, and we'd have a file holding only "ukulele".
+Since <htmlCode><b>></b></htmlCode> overwrites a file, each time we go through the loop it would overwrite the file and at the end we'd be left with just the last iteration, and we'd have a file holding only "venus".
 
 <pre>head test.txt</pre>
 
@@ -147,7 +150,10 @@ Since <htmlCode><b>></b></htmlCode> overwrites a file, each time we go through t
 
 <center><b>QUICK PRACTICE AGAIN!</b></center>
 
+<br>
+
 Can you think of where we could put the <htmlCode><b>></b></htmlCode> so that it wouldn't overwrite the file with each iteration of the loop?
+
 <br>
 
 <details>
@@ -155,7 +161,7 @@ Can you think of where we could put the <htmlCode><b>></b></htmlCode> so that it
   <p>
 
   ```bash
-  for item in cat dog ukulele
+  for item in earth mars venus
   do
     echo $item
   done > test.txt
@@ -174,18 +180,19 @@ Usually we won't want to type out the items we're looping over, that was just to
 
 
 ## Looping through lines of a file
+
 Instead of typing out the elements we want to loop over, we can execute a command in such a way that the output of that command becomes the list of things we are looping over.
 
 We're going to use the **`cat`** command to help us do this (which comes from con**cat**enate). **`cat`** is kind of like **`head`**, except that instead of just printing the first lines in a file, it prints the whole thing:
 
 ```bash
-cat words.txt
+cat planets.txt
 ```
 
 Here we'll use **`cat`** to pull the items we want to loop over from the file, instead of us needing to type them out like we did above. The syntax of how to do this may seem a little odd at first, but let's look at it and then break it down. Here is an example with our "words.txt" file we just made:
 
 ```bash
-for item in $(cat words.txt)
+for item in $(cat planets.txt)
 do
   echo $item
 done
@@ -194,7 +201,7 @@ done
 Here, where we say **`$(cat words.txt)`**, the command line is performing that operation first (it's evaluting what's inside the parentheses, similar to what the dollar sign does when put in front of our variable name, "item"), and then puts the output in its place. We can use **`echo`** to see this has the same result as when we typed the items out:
 
 ```bash
-echo $(cat words.txt)
+echo $(cat planets.txt)
 ```
 
 For a more practical example, let's pull multiple specific sequences we want from a file!
@@ -216,7 +223,7 @@ A pretty neat use of **`paste`** is to interleave two files. What **`paste`** is
 To start, let's copy over our table that holds the gene IDs, lengths, and sequences (remember the **`.`** says to copy it to our current location and keep the same name):
 
 ```bash
-cp ~/unix_intro/six_commands/genes_and_seqs.tsv .
+cp ~/Desktop/workshop/unix_intro/six_commands/genes_and_seqs.tsv .
 ```
 
 This file holds the gene IDs in the first column and the sequences in the third:
