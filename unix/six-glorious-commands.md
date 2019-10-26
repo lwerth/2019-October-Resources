@@ -230,6 +230,10 @@ Notice that by putting the dash after the 6, and nothing else, we are specifying
 
 
 ## sed
+
+<details>
+  <summary>Solution</summary>
+  <p>
 **`sed`** (for **s**tream **ed**itor) is our "search and replace" command, just like in something like Excel or Word, but much more powerful. Like many of the commands here, **`sed`** is useful in just general usage, but you can also learn to do a lot more with it if you need/want to at some point. For now, let's look at the general usage.
 
 Let's imagine a totally-not-real, never-happened scenario where co-authors waited until our paper was accepted (and we've even approved the proofs already) to then tell us they want to change the name of one of the new genomes in it 🤦 So now we need to change all instances of "UW179A" to "UW277".
@@ -278,8 +282,16 @@ sed 's/NA/<NA>/g' gene_annotations.tsv | head
 
 And now all instances are replaced. These quick examples were just looking for exact matches, but **`sed`** has very powerful pattern searching features (building off of what special characters like **`*`**, **`?`**, and others can do) that you can look into as needed.
 
+  </p>
+</details>
+
+<br>
 
 ## awk  
+
+<details>
+  <summary>Solution</summary>
+  <p>
 **`awk`** is even more expansive than any of the others we've seen, but like the others, just being familiar with its basic command-line usage can be powerful. **`awk`** is useful for doing things like filtering based on columns and doing calculations.
 
 The syntax of **`awk`** can also take a little getting used to. For some examples, we're going to work with a typical BLAST output table. Let's take a look at it first with **`head`**:
@@ -319,8 +331,16 @@ awk ' $5 > 95 && $6 > $2 * 0.9 ' blast_output.tsv
 
 Again, **`awk`** can seem pretty tricky, especially at first, but forunately we don't need to remember *how* to do these things, just that they can be done. And then we can look it up when we need it 🙂
 
+  </p>
+</details>
+
+<br>
 
 ## tr
+
+<details>
+  <summary>Solution</summary>
+  <p>
 The last one we're going to look at is **`tr`** (for **tr**anslate). **`tr`** changes one character into another character. It seems to become more useful with time, but it's worth knowing early if for no other reason than it deals with special characters really well – the type of special characters that many Excel versions put in exported tables that can ruin working with them at the command line 🤬
 
 For example, when exporting a table as tab-delimited or as a csv file from many versions of Excel, there will be odd newline characters (newline characters tell the computer to end one line and start a new one). The typical newline character is represented like this **`\n`**, but Excel likes to put in **`\r`** characters. We can see this messing with things on the Excel-exported file if we open it with **`less`**:
@@ -350,6 +370,10 @@ Now we can see the new file we made is ready for the command line (**`q`** exits
 ```bash
 less gene_annotations_fixed.tsv
 ```
+
+  </p>
+</details>
+
 
 
 
