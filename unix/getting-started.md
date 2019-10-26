@@ -205,7 +205,7 @@ ls
 head notes.txt
 ```
 
-Great. But now how do we get back "up" to the directory above us? One way would be to provide an absolute path, like **`cd ~/unix_intro`**, but there is also a handy shortcut. **`..`** are special characters that act as a relative path specifying "up" one level – one directory – from wherever we currently are. So we can provide that as the positional argument to **`cd`** to get back to where we started:
+Great. But now how do we get back "up" to the directory above us? One way would be to provide an absolute path, like **`cd ~/Desktop/workshop/unix_intro`**, but there is also a handy shortcut. **`..`** are special characters that act as a relative path specifying "up" one level – one directory – from wherever we currently are. So we can provide that as the positional argument to **`cd`** to get back to where we started:
 
 ```bash
 cd ..
