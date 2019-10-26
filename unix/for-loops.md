@@ -209,6 +209,10 @@ For a more practical example, let's pull multiple specific sequences we want fro
 
 ### BONUS ROUND: interleaving files with **paste**
 
+<details>
+  <summary>Solution</summary>
+  <p>
+
 A pretty neat use of **`paste`** is to interleave two files. What **`paste`** is doing is sticking two files together, line-by-line, with some delimiter (separating character) in between them. This delimiter by default is a **`tab`** character, but we can set it to other things too, including a *newline* character. To demonstrate this, let's make a fasta-formatted sequence file from our genes in the previous lesson.
 
 >"Fasta" is a common format for holding sequence information. In it, each sequence entry takes up two lines: the first is the name of the sequence and needs to be preceded by a **`>`** character; and the second line is the sequence. It looks like this:
@@ -343,6 +347,11 @@ done > target_genes.faa
 ls
 head target_genes.faa
 ```
+
+  </p>
+</details>
+
+
 
 
 
